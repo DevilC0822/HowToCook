@@ -4,10 +4,12 @@ import { Button } from "@heroui/react";
 import { dishesApi } from "../services/dishesApi";
 import type { Dish } from "../services/dishesApi";
 import { addFavorite, removeFavoriteWithCache, isFavorite } from "../utils/favorites";
+import { useTheme } from "../hooks/useTheme";
 
 export default function DishDetail() {
   const { filePath } = useParams<{ filePath: string }>();
   const navigate = useNavigate();
+  const { isDark } = useTheme();
   const [dish, setDish] = useState<Dish | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -62,14 +64,18 @@ export default function DishDetail() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div className={`min-h-screen transition-colors duration-300 ${isDark
+        ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
+        : 'bg-gradient-to-br from-slate-50 via-white to-blue-50/30'
+        }`}>
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center space-y-6">
             {/* 精致的加载动画 */}
             <div className="relative">
               <div className="w-20 h-20 mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-spin">
-                  <div className="absolute inset-2 bg-white rounded-full"></div>
+                  <div className={`absolute inset-2 rounded-full transition-colors duration-300 ${isDark ? 'bg-slate-800' : 'bg-white'
+                    }`}></div>
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-2xl">🍽️</span>
@@ -77,8 +83,8 @@ export default function DishDetail() {
               </div>
             </div>
             <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-slate-800">正在加载菜品详情</h3>
-              <p className="text-slate-600">为您精心准备详细的制作方法...</p>
+              <h3 className={`text-xl font-semibold transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>正在加载菜品详情</h3>
+              <p className={`transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>为您精心准备详细的制作方法...</p>
             </div>
           </div>
         </div>
@@ -107,7 +113,10 @@ export default function DishDetail() {
               </Button>
               <Button
                 onClick={() => navigate('/dishes')}
-                className="bg-white/80 backdrop-blur-sm text-slate-700 border border-slate-200 hover:border-slate-300 px-8 py-3 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
+                className={`px-8 py-3 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01] border ${isDark
+                  ? 'bg-slate-800/50 backdrop-blur-xl text-slate-300 hover:text-blue-400 border-slate-700/50 hover:border-blue-500/30'
+                  : 'bg-white/80 backdrop-blur-sm text-slate-700 border-slate-200 hover:border-slate-300'
+                  }`}
               >
                 浏览菜品
               </Button>
@@ -119,7 +128,10 @@ export default function DishDetail() {
   }
 
   return (
-    <div className="dish-detail-container min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 scrollbar-premium">
+    <div className={`dish-detail-container min-h-screen scrollbar-premium transition-colors duration-300 ${isDark
+      ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
+      : 'bg-gradient-to-br from-slate-50 via-white to-blue-50/30'
+      }`}>
       {/* 背景装饰 */}
       <div className="fixed top-0 left-0 right-0 h-96 bg-gradient-to-b from-blue-500/3 via-purple-500/2 to-transparent pointer-events-none"></div>
       <div className="fixed top-10 right-10 w-64 h-64 bg-gradient-to-br from-blue-400/5 to-purple-400/5 rounded-full blur-3xl animate-float pointer-events-none"></div>
@@ -129,7 +141,10 @@ export default function DishDetail() {
         <div className="container mx-auto px-4 py-8 max-w-5xl">
           {/* 顶部导航栏 */}
           <div className="mb-8 animate-fade-in-up">
-            <div className="dish-detail-header flex items-center justify-between apple-card-elevated rounded-3xl p-6">
+            <div className={`dish-detail-header flex items-center justify-between rounded-3xl p-6 transition-colors duration-300 ${isDark
+              ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+              : 'apple-card-elevated'
+              }`}>
               <div className="flex items-center gap-6">
                 <Button
                   onClick={() => navigate(-1)}
@@ -138,10 +153,14 @@ export default function DishDetail() {
                   ← 返回
                 </Button>
                 <div>
-                  <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 bg-clip-text text-transparent">
+                  <h1 className={`text-3xl md:text-4xl font-bold bg-gradient-to-r bg-clip-text text-transparent transition-colors duration-300 ${isDark
+                    ? 'from-slate-200 via-slate-100 to-slate-200'
+                    : 'from-slate-800 via-slate-700 to-slate-800'
+                    }`}>
                     {dish.name}
                   </h1>
-                  <p className="text-slate-600 mt-1 text-sm">精选美食 · 用心制作</p>
+                  <p className={`mt-1 text-sm transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'
+                    }`}>精选美食 · 用心制作</p>
                 </div>
               </div>
 
@@ -149,7 +168,9 @@ export default function DishDetail() {
                 onClick={handleToggleFavorite}
                 className={`favorite-button ${isFav
                   ? "bg-gradient-to-r from-rose-500 to-pink-500 text-white px-6 py-3 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
-                  : "bg-white/80 backdrop-blur-sm text-slate-700 border border-slate-200 hover:border-rose-300 px-6 py-3 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
+                  : isDark
+                    ? "bg-slate-700/80 backdrop-blur-sm text-slate-300 border border-slate-600 hover:border-rose-400 px-6 py-3 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
+                    : "bg-white/80 backdrop-blur-sm text-slate-700 border border-slate-200 hover:border-rose-300 px-6 py-3 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
                   }`}
               >
                 {isFav ? '❤️ 已收藏' : '🤍 收藏'}
@@ -159,7 +180,10 @@ export default function DishDetail() {
 
           {/* 菜品概览卡片 - 简约苹果风格 */}
           <div className="mb-8 animate-slide-in" style={{ animationDelay: '0.1s' }}>
-            <div className="apple-card-elevated rounded-3xl p-8">
+            <div className={`rounded-3xl p-8 transition-colors duration-300 ${isDark
+              ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+              : 'apple-card-elevated'
+              }`}>
               {/* 标签网格 */}
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
                 {/* 难度标签 */}
@@ -222,7 +246,10 @@ export default function DishDetail() {
             <div className="space-y-8">
               {/* 用料卡片 */}
               <div className="animate-scale-in" style={{ animationDelay: '0.2s' }}>
-                <div className="apple-card-elevated rounded-3xl p-8">
+                <div className={`rounded-3xl p-8 transition-colors duration-300 ${isDark
+                  ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+                  : 'apple-card-elevated'
+                  }`}>
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center apple-icon-shadow">
                       <span className="text-white text-xl">🥬</span>
@@ -265,7 +292,10 @@ export default function DishDetail() {
             <div className="space-y-8">
               {/* 制作步骤卡片 */}
               <div className="animate-scale-in" style={{ animationDelay: '0.4s' }}>
-                <div className="apple-card-elevated rounded-3xl p-8">
+                <div className={`rounded-3xl p-8 transition-colors duration-300 ${isDark
+                  ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+                  : 'apple-card-elevated'
+                  }`}>
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center apple-icon-shadow">
                       <span className="text-white text-xl">👨‍🍳</span>
@@ -332,7 +362,10 @@ export default function DishDetail() {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* 标签信息 */}
             <div className="animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-              <div className="apple-card-elevated rounded-3xl p-8">
+              <div className={`rounded-3xl p-8 transition-colors duration-300 ${isDark
+                ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+                : 'apple-card-elevated'
+                }`}>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center apple-icon-shadow">
                     <span className="text-white text-lg">🏷️</span>
@@ -358,7 +391,10 @@ export default function DishDetail() {
 
             {/* 适合人群 */}
             <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-              <div className="apple-card-elevated rounded-3xl p-8">
+              <div className={`rounded-3xl p-8 transition-colors duration-300 ${isDark
+                ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+                : 'apple-card-elevated'
+                }`}>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center apple-icon-shadow">
                     <span className="text-white text-lg">👥</span>
@@ -398,11 +434,14 @@ export default function DishDetail() {
                   {dish.importantNotes.map((note, idx) => (
                     <div
                       key={idx}
-                      className="warning-item flex items-start gap-3 p-4 bg-white/70 rounded-2xl border border-amber-100 animate-scale-in"
+                      className={`warning-item flex items-start gap-3 p-4 rounded-2xl border animate-scale-in transition-colors duration-300 ${isDark
+                        ? 'bg-slate-800/50 border-yellow-500/20'
+                        : 'bg-white/70 border-amber-100'
+                        }`}
                       style={{ animationDelay: `${0.05 * idx}s` }}
                     >
                       <div className="w-2 h-2 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p className="text-amber-800 leading-relaxed font-medium">{note}</p>
+                      <p className={`leading-relaxed font-medium transition-colors duration-300 ${isDark ? 'text-yellow-300' : 'text-amber-800'}`}>{note}</p>
                     </div>
                   ))}
                 </div>
@@ -412,10 +451,15 @@ export default function DishDetail() {
 
           {/* 底部操作区域 */}
           <div className="mt-12 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            <div className="bottom-actions apple-card-elevated rounded-3xl p-8 text-center">
+            <div className={`bottom-actions rounded-3xl p-8 text-center transition-colors duration-300 ${isDark
+              ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+              : 'apple-card-elevated'
+              }`}>
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-slate-800 mb-2">享受烹饪乐趣</h3>
-                <p className="text-slate-600">希望这道美食能为您带来满满的幸福感</p>
+                <h3 className={`text-2xl font-bold mb-2 transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'
+                  }`}>享受烹饪乐趣</h3>
+                <p className={`transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'
+                  }`}>希望这道美食能为您带来满满的幸福感</p>
               </div>
 
               <div className="flex flex-wrap justify-center gap-4">
@@ -429,7 +473,10 @@ export default function DishDetail() {
                   onClick={handleToggleFavorite}
                   className={`favorite-button ${isFav
                     ? "bg-gradient-to-r from-rose-500 to-pink-500 text-white px-8 py-3 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
-                    : "bg-white/80 backdrop-blur-sm text-slate-700 border border-slate-200 hover:border-rose-300 px-8 py-3 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
+                    : `px-8 py-3 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01] border ${isDark
+                      ? 'bg-slate-800/50 backdrop-blur-xl text-slate-300 hover:text-rose-400 border-slate-700/50 hover:border-rose-500/30'
+                      : 'bg-white/80 backdrop-blur-sm text-slate-700 border-slate-200 hover:border-rose-300'
+                    }`
                     }`}
                 >
                   {isFav ? '❤️ 已收藏' : '🤍 添加收藏'}

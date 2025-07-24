@@ -42,9 +42,9 @@ export default function CacheIndicator({
     <div className={`fixed ${positionClasses[position]} z-50 transition-all duration-300 ${show ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
       }`}>
       <Chip
-        className={`px-4 py-2 text-sm font-medium apple-icon-shadow ${isFromCache
-            ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
-            : 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white'
+        className={`px-4 py-2 text-sm font-medium apple-icon-shadow transition-colors duration-300 ${isFromCache
+          ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
+          : 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white'
           }`}
         startContent={
           <span className="text-lg mr-1">

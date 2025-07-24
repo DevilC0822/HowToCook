@@ -5,10 +5,12 @@ import { starSystemApi } from "../services/starSystemApi";
 import type { StarSystem, StarSystemStats, StarSystemResponse } from "../services/starSystemApi";
 import { useAppCache } from "../hooks/useAppCache";
 import CacheIndicator from "../components/CacheIndicator";
+import { useTheme } from "../hooks/useTheme";
 
 export default function StarSystem() {
   const navigate = useNavigate();
   const appCache = useAppCache();
+  const { isDark } = useTheme();
 
   const [starSystems, setStarSystems] = useState<StarSystem[]>([]);
   const [stats, setStats] = useState<StarSystemStats | null>(null);
@@ -225,14 +227,17 @@ export default function StarSystem() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div className={`min-h-screen transition-colors duration-300 ${isDark
+        ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
+        : 'bg-gradient-to-br from-slate-50 via-white to-blue-50/30'
+        }`}>
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center space-y-6">
             {/* 精致的加载动画 */}
             <div className="relative">
               <div className="w-20 h-20 mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full animate-spin">
-                  <div className="absolute inset-2 bg-white rounded-full"></div>
+                  <div className={`absolute inset-2 rounded-full transition-colors duration-300 ${isDark ? 'bg-slate-800' : 'bg-white'}`}></div>
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-2xl">⭐</span>
@@ -240,8 +245,8 @@ export default function StarSystem() {
               </div>
             </div>
             <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-slate-800">正在加载星级菜谱</h3>
-              <p className="text-slate-600">为您精心准备分级烹饪指南...</p>
+              <h3 className={`text-xl font-semibold transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>正在加载星级菜谱</h3>
+              <p className={`transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>为您精心准备分级烹饪指南...</p>
             </div>
           </div>
         </div>
@@ -270,7 +275,10 @@ export default function StarSystem() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 scrollbar-premium">
+    <div className={`min-h-screen scrollbar-premium transition-colors duration-300 ${isDark
+      ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
+      : 'bg-gradient-to-br from-slate-50 via-white to-blue-50/30'
+      }`}>
       {/* 顶部装饰性渐变 */}
       <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-blue-500/5 via-purple-500/3 to-transparent pointer-events-none"></div>
 
@@ -304,16 +312,26 @@ export default function StarSystem() {
               系统化学习烹饪技能，成就美食达人
             </p>
             {stats && (
-              <div className="mt-8 flex flex-wrap justify-center items-center gap-4 text-slate-600">
-                <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-2xl apple-icon-shadow border border-white/20">
+              <div className={`mt-8 flex flex-wrap justify-center items-center gap-4 transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'
+                }`}>
+                <div className={`flex items-center gap-2 backdrop-blur-sm px-4 py-2 rounded-2xl apple-icon-shadow transition-colors duration-300 ${isDark
+                  ? 'bg-slate-800/60 border border-slate-700/20'
+                  : 'bg-white/60 border border-white/20'
+                  }`}>
                   <span className="text-yellow-500">⭐</span>
                   <span className="font-medium">{stats.totalStarSystems} 个星级</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-2xl apple-icon-shadow border border-white/20">
+                <div className={`flex items-center gap-2 backdrop-blur-sm px-4 py-2 rounded-2xl apple-icon-shadow transition-colors duration-300 ${isDark
+                  ? 'bg-slate-800/60 border border-slate-700/20'
+                  : 'bg-white/60 border border-white/20'
+                  }`}>
                   <span className="text-green-500">🍽️</span>
                   <span className="font-medium">{stats.totalDishes} 道菜品</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-2xl apple-icon-shadow border border-white/20">
+                <div className={`flex items-center gap-2 backdrop-blur-sm px-4 py-2 rounded-2xl apple-icon-shadow transition-colors duration-300 ${isDark
+                  ? 'bg-slate-800/60 border border-slate-700/20'
+                  : 'bg-white/60 border border-white/20'
+                  }`}>
                   <span className="text-purple-500">📈</span>
                   <span className="font-medium">平均 {stats.averageDishesPerLevel != null ? stats.averageDishesPerLevel.toFixed(1) : '0.0'} 道/级</span>
                 </div>
@@ -337,7 +355,10 @@ export default function StarSystem() {
                       style={{ animationDelay: `${0.05 * (index % 20)}s` }}
                     >
                       {/* 主卡片 - 设置统一高度：h-[420px] */}
-                      <div className="h-[420px] apple-glass rounded-3xl overflow-hidden flex flex-col">
+                      <div className={`h-[420px] rounded-3xl overflow-hidden flex flex-col transition-colors duration-300 ${isDark
+                        ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+                        : 'apple-glass'
+                        }`}>
                         {/* 背景装饰 */}
                         <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-yellow-500/5 to-orange-500/5 rounded-full -mr-10 -mt-10"></div>
                         <div className="absolute bottom-0 left-0 w-12 h-12 bg-gradient-to-br from-yellow-400/5 to-yellow-500/5 rounded-full -ml-6 -mb-6"></div>
@@ -476,21 +497,24 @@ export default function StarSystem() {
                           <div className="absolute inset-0 w-12 h-12 border-4 border-transparent border-r-orange-500 rounded-full animate-spin" style={{ animationDirection: 'reverse', animationDuration: '0.8s' }}></div>
                         </div>
                         <div className="text-center">
-                          <p className="text-yellow-600 font-semibold text-lg">正在加载更多星级菜谱...</p>
-                          <p className="text-slate-500 text-sm mt-1">请稍候，为您准备更多挑战菜谱</p>
+                          <p className={`font-semibold text-lg transition-colors duration-300 ${isDark ? 'text-yellow-400' : 'text-yellow-600'}`}>正在加载更多星级菜谱...</p>
+                          <p className={`text-sm mt-1 transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>请稍候，为您准备更多挑战菜谱</p>
                         </div>
                       </div>
                     </div>
                   )}
 
                   {/* 加载更多按钮 - 醒目设计 */}
-                  <div className="apple-card-elevated rounded-3xl p-8 max-w-2xl mx-auto">
+                  <div className={`rounded-3xl p-8 max-w-2xl mx-auto transition-colors duration-300 ${isDark
+                    ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+                    : 'apple-card-elevated'
+                    }`}>
                     <div className="text-center">
                       <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl apple-icon-shadow flex items-center justify-center">
                         <span className="text-white text-2xl">⭐</span>
                       </div>
-                      <h3 className="text-xl font-bold text-slate-800 mb-2">还有更多星级菜谱</h3>
-                      <p className="text-slate-600 mb-6">已展示 {starSystems.length} 个星级，更多进阶菜谱等你挑战</p>
+                      <h3 className={`text-xl font-bold mb-2 transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>还有更多星级菜谱</h3>
+                      <p className={`mb-6 transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>已展示 {starSystems.length} 个星级，更多进阶菜谱等你挑战</p>
                       <Button
                         onClick={loadMoreStarSystems}
                         disabled={loadingMore || currentPage >= totalPages}
@@ -517,8 +541,8 @@ export default function StarSystem() {
                 <div className="w-24 h-24 bg-gradient-to-br from-slate-100 to-slate-200 rounded-full flex items-center justify-center mx-auto mb-6 apple-icon-shadow">
                   <span className="text-3xl">⭐</span>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-800 mb-2">暂无星级菜谱</h3>
-                <p className="text-slate-600 mb-6">系统正在为您准备精彩内容</p>
+                <h3 className={`text-xl font-semibold mb-2 transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>暂无星级菜谱</h3>
+                <p className={`mb-6 transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>系统正在为您准备精彩内容</p>
                 <Button
                   onClick={loadInitialData}
                   className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-3 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
@@ -531,17 +555,28 @@ export default function StarSystem() {
 
           {/* 提示信息 - 精致化重设计 */}
           <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-8 shadow-2xl premium-glass max-w-4xl mx-auto">
+            <div className={`backdrop-blur-xl rounded-3xl p-8 shadow-2xl premium-glass max-w-4xl mx-auto transition-colors duration-300 ${isDark
+              ? '!bg-slate-800/60'
+              : '!bg-white/60'
+              }`}>
               {/* 背景装饰 */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-yellow-500/5 to-orange-500/5 rounded-full -mr-12 -mt-12"></div>
-              <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-br from-yellow-400/5 to-yellow-500/5 rounded-full -ml-8 -mb-8"></div>
+              <div className={`absolute top-0 right-0 w-24 h-24 rounded-full -mr-12 -mt-12 transition-colors duration-300 ${isDark
+                ? 'bg-gradient-to-br from-yellow-500/10 to-orange-500/10'
+                : 'bg-gradient-to-br from-yellow-500/5 to-orange-500/5'
+                }`}></div>
+              <div className={`absolute bottom-0 left-0 w-16 h-16 rounded-full -ml-8 -mb-8 transition-colors duration-300 ${isDark
+                ? 'bg-gradient-to-br from-yellow-400/10 to-yellow-500/10'
+                : 'bg-gradient-to-br from-yellow-400/5 to-yellow-500/5'
+                }`}></div>
 
               <div className="relative z-10">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 apple-icon-shadow">
                   <span className="text-white text-2xl">💡</span>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-6">学习建议</h3>
-                <p className="text-slate-600 leading-relaxed text-lg max-w-2xl mx-auto">
+                <h3 className={`text-2xl font-bold mb-6 transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'
+                  }`}>学习建议</h3>
+                <p className={`leading-relaxed text-lg max-w-2xl mx-auto transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'
+                  }`}>
                   <span className="font-semibold text-blue-600">🌟 循序渐进：</span>
                   选择适合你当前水平的星级菜谱，从基础技能开始积累经验。
                   <br />

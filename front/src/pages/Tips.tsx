@@ -5,10 +5,12 @@ import { tipsApi } from "../services/tipsApi";
 import type { Tip, TipsStats, TipsResponse } from "../services/tipsApi";
 import CacheIndicator from "../components/CacheIndicator";
 import { useAppCache } from "../hooks/useAppCache";
+import { useTheme } from "../hooks/useTheme";
 
 export default function Tips() {
   const navigate = useNavigate();
   const appCache = useAppCache();
+  const { isDark } = useTheme();
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDifficulty, setSelectedDifficulty] = useState("");
@@ -282,14 +284,17 @@ export default function Tips() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div className={`min-h-screen transition-colors duration-300 ${isDark
+        ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
+        : 'bg-gradient-to-br from-slate-50 via-white to-blue-50/30'
+        }`}>
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center space-y-6">
             {/* 精致的加载动画 */}
             <div className="relative">
               <div className="w-20 h-20 mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-spin">
-                  <div className="absolute inset-2 bg-white rounded-full"></div>
+                  <div className={`absolute inset-2 rounded-full ${isDark ? 'bg-slate-800' : 'bg-white'}`}></div>
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-2xl">💡</span>
@@ -297,8 +302,10 @@ export default function Tips() {
               </div>
             </div>
             <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-slate-800">正在加载做饭指南</h3>
-              <p className="text-slate-600">为您精心准备实用的烹饪指南...</p>
+              <h3 className={`text-xl font-semibold transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'
+                }`}>正在加载做饭指南</h3>
+              <p className={`transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'
+                }`}>为您精心准备实用的烹饪指南...</p>
             </div>
           </div>
         </div>
@@ -308,12 +315,17 @@ export default function Tips() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div className={`min-h-screen transition-colors duration-300 ${isDark
+        ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
+        : 'bg-gradient-to-br from-slate-50 via-white to-blue-50/30'
+        }`}>
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center space-y-6 max-w-md mx-auto p-8">
             <div className="text-6xl mb-4">😞</div>
-            <h3 className="text-xl font-semibold text-slate-800">加载失败</h3>
-            <p className="text-slate-600">{error}</p>
+            <h3 className={`text-xl font-semibold transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'
+              }`}>加载失败</h3>
+            <p className={`transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'
+              }`}>{error}</p>
             <Button
               onClick={loadInitialData}
               className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
@@ -327,14 +339,29 @@ export default function Tips() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 scrollbar-premium">
+    <div className={`min-h-screen scrollbar-premium transition-colors duration-300 ${isDark
+      ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
+      : 'bg-gradient-to-br from-slate-50 via-white to-blue-50/30'
+      }`}>
       {/* 顶部装饰性渐变 */}
-      <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-blue-500/5 via-purple-500/3 to-transparent pointer-events-none"></div>
+      <div className={`absolute top-0 left-0 right-0 h-96 pointer-events-none transition-colors duration-300 ${isDark
+        ? 'bg-gradient-to-b from-blue-500/10 via-purple-500/5 to-transparent'
+        : 'bg-gradient-to-b from-blue-500/5 via-purple-500/3 to-transparent'
+        }`}></div>
 
       {/* 浮动装饰元素 */}
-      <div className="fixed top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-float pointer-events-none opacity-50"></div>
-      <div className="fixed bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-pink-400/10 to-orange-400/10 rounded-full blur-3xl animate-float pointer-events-none opacity-50" style={{ animationDelay: '2s' }}></div>
-      <div className="fixed top-1/2 right-1/4 w-24 h-24 bg-gradient-to-br from-green-400/8 to-teal-400/8 rounded-full blur-2xl animate-float pointer-events-none opacity-40" style={{ animationDelay: '4s' }}></div>
+      <div className={`fixed top-20 left-10 w-32 h-32 rounded-full blur-3xl animate-float pointer-events-none transition-colors duration-300 ${isDark
+        ? 'bg-gradient-to-br from-blue-400/15 to-purple-400/15 opacity-40'
+        : 'bg-gradient-to-br from-blue-400/10 to-purple-400/10 opacity-50'
+        }`}></div>
+      <div className={`fixed bottom-20 right-10 w-40 h-40 rounded-full blur-3xl animate-float pointer-events-none transition-colors duration-300 ${isDark
+        ? 'bg-gradient-to-br from-pink-400/15 to-orange-400/15 opacity-40'
+        : 'bg-gradient-to-br from-pink-400/10 to-orange-400/10 opacity-50'
+        }`} style={{ animationDelay: '2s' }}></div>
+      <div className={`fixed top-1/2 right-1/4 w-24 h-24 rounded-full blur-2xl animate-float pointer-events-none transition-colors duration-300 ${isDark
+        ? 'bg-gradient-to-br from-green-400/12 to-teal-400/12 opacity-35'
+        : 'bg-gradient-to-br from-green-400/8 to-teal-400/8 opacity-40'
+        }`} style={{ animationDelay: '4s' }}></div>
 
       {/* 缓存状态指示器 */}
       <CacheIndicator
@@ -361,16 +388,26 @@ export default function Tips() {
               让您轻松掌握美食制作的秘诀
             </p>
             {stats && (
-              <div className="mt-8 flex flex-wrap justify-center items-center gap-4 text-slate-600">
-                <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-2xl apple-icon-shadow border border-white/20">
+              <div className={`mt-8 flex flex-wrap justify-center items-center gap-4 transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'
+                }`}>
+                <div className={`flex items-center gap-2 backdrop-blur-sm px-4 py-2 rounded-2xl apple-icon-shadow transition-colors duration-300 ${isDark
+                  ? 'bg-slate-800/60 border border-slate-700/20'
+                  : 'bg-white/60 border border-white/20'
+                  }`}>
                   <span className="text-blue-500">📚</span>
                   <span className="font-medium">{stats.total} 个技巧</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-2xl apple-icon-shadow border border-white/20">
+                <div className={`flex items-center gap-2 backdrop-blur-sm px-4 py-2 rounded-2xl apple-icon-shadow transition-colors duration-300 ${isDark
+                  ? 'bg-slate-800/60 border border-slate-700/20'
+                  : 'bg-white/60 border border-white/20'
+                  }`}>
                   <span className="text-green-500">🏷️</span>
                   <span className="font-medium">{categories.length} 个分类</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-2xl apple-icon-shadow border border-white/20">
+                <div className={`flex items-center gap-2 backdrop-blur-sm px-4 py-2 rounded-2xl apple-icon-shadow transition-colors duration-300 ${isDark
+                  ? 'bg-slate-800/60 border border-slate-700/20'
+                  : 'bg-white/60 border border-white/20'
+                  }`}>
                   <span className="text-purple-500">⭐</span>
                   <span className="font-medium">{stats.popularTags.length} 个热门</span>
                 </div>
@@ -380,15 +417,25 @@ export default function Tips() {
 
           {/* 筛选栏 - 精致化重设计 */}
           <div className="mb-12 animate-slide-in">
-            <div className="apple-card-elevated rounded-3xl p-6 md:p-8">
+            <div className={`rounded-3xl p-6 md:p-8 transition-colors duration-300 ${isDark
+              ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+              : 'apple-card-elevated'
+              }`}>
               {/* 背景装饰 */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-full -mr-12 -mt-12"></div>
-              <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-br from-blue-400/5 to-blue-500/5 rounded-full -ml-8 -mb-8"></div>
+              <div className={`absolute top-0 right-0 w-24 h-24 rounded-full -mr-12 -mt-12 transition-colors duration-300 ${isDark
+                ? 'bg-gradient-to-br from-blue-500/10 to-purple-500/10'
+                : 'bg-gradient-to-br from-blue-500/5 to-purple-500/5'
+                }`}></div>
+              <div className={`absolute bottom-0 left-0 w-16 h-16 rounded-full -ml-8 -mb-8 transition-colors duration-300 ${isDark
+                ? 'bg-gradient-to-br from-blue-400/10 to-blue-500/10'
+                : 'bg-gradient-to-br from-blue-400/5 to-blue-500/5'
+                }`}></div>
 
               <div className="relative z-10 space-y-8">
                 {/* 分类筛选 */}
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 mb-6 flex items-center gap-3">
+                  <h3 className={`text-lg font-semibold mb-6 flex items-center gap-3 transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'
+                    }`}>
                     <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
                     分类筛选
                   </h3>
@@ -399,7 +446,9 @@ export default function Tips() {
                         onClick={() => handleCategorySelect(category)}
                         className={`px-4 py-2.5 rounded-2xl font-medium cursor-pointer transition-all duration-300 transform hover:scale-[1.01] animate-scale-in whitespace-nowrap ${selectedCategory === category
                           ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white apple-icon-shadow hover:shadow-xl'
-                          : 'bg-white/80 text-slate-700 hover:bg-white hover:shadow-md border border-slate-200/50'
+                          : isDark
+                            ? 'bg-slate-700/50 text-slate-300 hover:bg-slate-600/50 hover:shadow-md border border-slate-600/50'
+                            : 'bg-white/80 text-slate-700 hover:bg-white hover:shadow-md border border-slate-200/50'
                           }`}
                         style={{ animationDelay: `${0.05 * index}s` }}
                         size="lg"
@@ -412,7 +461,8 @@ export default function Tips() {
 
                 {/* 难度筛选 */}
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-800 mb-6 flex items-center gap-3">
+                  <h3 className={`text-lg font-semibold mb-6 flex items-center gap-3 transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'
+                    }`}>
                     <div className="w-3 h-3 bg-gradient-to-r from-green-500 to-green-600 rounded-full"></div>
                     难度筛选
                   </h3>
@@ -423,7 +473,9 @@ export default function Tips() {
                         onClick={() => handleDifficultySelect(difficulty)}
                         className={`px-6 py-2.5 rounded-2xl font-medium cursor-pointer transition-all duration-300 transform hover:scale-[1.01] animate-scale-in whitespace-nowrap ${selectedDifficulty === difficulty
                           ? 'bg-gradient-to-r from-green-500 to-green-600 text-white apple-icon-shadow hover:shadow-xl'
-                          : 'bg-white/80 text-slate-700 hover:bg-white hover:shadow-md border border-slate-200/50'
+                          : isDark
+                            ? 'bg-slate-700/50 text-slate-300 hover:bg-slate-600/50 hover:shadow-md border border-slate-600/50'
+                            : 'bg-white/80 text-slate-700 hover:bg-white hover:shadow-md border border-slate-200/50'
                           }`}
                         style={{ animationDelay: `${0.1 * index}s` }}
                         size="lg"
@@ -436,14 +488,18 @@ export default function Tips() {
 
                 {/* 清除筛选 */}
                 {(selectedCategory || selectedDifficulty) && (
-                  <div className="flex justify-end pt-4 border-t border-slate-200/30">
+                  <div className={`flex justify-end pt-4 transition-colors duration-300 ${isDark ? 'border-t border-slate-700/30' : 'border-t border-slate-200/30'
+                    }`}>
                     <Button
                       onClick={() => {
                         setSelectedCategory("");
                         setSelectedDifficulty("");
                         setCurrentPage(1);
                       }}
-                      className="bg-slate-100 hover:bg-slate-200 text-slate-700 px-6 py-2 rounded-xl font-medium transition-all duration-200 shadow-sm hover:shadow-md"
+                      className={`px-6 py-2 rounded-xl font-medium transition-all duration-200 shadow-sm hover:shadow-md ${isDark
+                        ? 'bg-slate-700 hover:bg-slate-600 text-slate-300'
+                        : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
+                        }`}
                       size="sm"
                     >
                       清除筛选 ✨
@@ -465,7 +521,10 @@ export default function Tips() {
                     style={{ animationDelay: `${0.05 * (index % 20)}s` }}
                   >
                     {/* 主卡片 - 设置统一高度：h-[420px] */}
-                    <div className="h-[368px] apple-glass rounded-3xl overflow-hidden flex flex-col">
+                    <div className={`h-[368px] rounded-3xl overflow-hidden flex flex-col transition-colors duration-300 ${isDark
+                      ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+                      : 'apple-glass'
+                      }`}>
                       {/* 背景装饰 */}
                       <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-full -mr-10 -mt-10"></div>
                       <div className="absolute bottom-0 left-0 w-12 h-12 bg-gradient-to-br from-blue-400/5 to-blue-500/5 rounded-full -ml-6 -mb-6"></div>
@@ -518,7 +577,10 @@ export default function Tips() {
                                   {tip.tags.slice(0, 3).map((tag, tagIndex) => (
                                     <span
                                       key={tagIndex}
-                                      className="text-xs bg-slate-100/80 text-slate-600 px-3 py-1 rounded-full font-medium hover:bg-slate-200/80 transition-colors duration-200 shadow-sm"
+                                      className={`text-xs px-3 py-1 rounded-full font-medium hover:shadow-sm transition-colors duration-200 ${isDark
+                                        ? 'bg-slate-700/80 text-slate-300 hover:bg-slate-600/80'
+                                        : 'bg-slate-100/80 text-slate-600 hover:bg-slate-200/80'
+                                        }`}
                                     >
                                       {tag}
                                     </span>
@@ -623,13 +685,18 @@ export default function Tips() {
                   )}
 
                   {/* 加载更多按钮 - 醒目设计 */}
-                  <div className="apple-card-elevated rounded-3xl p-8 max-w-2xl mx-auto">
+                  <div className={`rounded-3xl p-8 max-w-2xl mx-auto transition-colors duration-300 ${isDark
+                    ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+                    : 'apple-card-elevated'
+                    }`}>
                     <div className="text-center">
                       <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl apple-icon-shadow flex items-center justify-center">
                         <span className="text-white text-2xl">💡</span>
                       </div>
-                      <h3 className="text-xl font-bold text-slate-800 mb-2">还有更多实用指南</h3>
-                      <p className="text-slate-600 mb-6">已展示 {tips.length} 个指南，更多烹饪经验等你发现</p>
+                      <h3 className={`text-xl font-bold mb-2 transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'
+                        }`}>还有更多实用指南</h3>
+                      <p className={`mb-6 transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'
+                        }`}>已展示 {tips.length} 个指南，更多烹饪经验等你发现</p>
                       <Button
                         onClick={loadMoreTips}
                         disabled={loadingMore || currentPage >= totalPages}
@@ -654,13 +721,23 @@ export default function Tips() {
           {/* 统计信息卡片 - 精致化重设计 */}
           {stats && (
             <div className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-              <div className="bg-white/60 backdrop-blur-xl rounded-3xl p-8 shadow-2xl premium-glass">
+              <div className={`backdrop-blur-xl rounded-3xl p-8 shadow-2xl premium-glass transition-colors duration-300 ${isDark
+                ? '!bg-slate-800/60'
+                : '!bg-white/60'
+                }`}>
                 {/* 背景装饰 */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-full -mr-12 -mt-12"></div>
-                <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-br from-purple-400/5 to-purple-500/5 rounded-full -ml-8 -mb-8"></div>
+                <div className={`absolute top-0 right-0 w-24 h-24 rounded-full -mr-12 -mt-12 transition-colors duration-300 ${isDark
+                  ? 'bg-gradient-to-br from-purple-500/10 to-pink-500/10'
+                  : 'bg-gradient-to-br from-purple-500/5 to-pink-500/5'
+                  }`}></div>
+                <div className={`absolute bottom-0 left-0 w-16 h-16 rounded-full -ml-8 -mb-8 transition-colors duration-300 ${isDark
+                  ? 'bg-gradient-to-br from-purple-400/10 to-purple-500/10'
+                  : 'bg-gradient-to-br from-purple-400/5 to-purple-500/5'
+                  }`}></div>
 
                 <div className="relative z-10">
-                  <h2 className="text-2xl font-bold text-slate-800 text-center mb-8 flex items-center justify-center gap-3">
+                  <h2 className={`text-2xl font-bold text-center mb-8 flex items-center justify-center gap-3 transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'
+                    }`}>
                     <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full animate-pulse"></div>
                     热门标签
                     <div className="w-3 h-3 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full animate-pulse"></div>

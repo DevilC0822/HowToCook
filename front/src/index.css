@@ -2,7 +2,6 @@
 @plugin './hero.ts';
 /* Note: You may need to change the path to fit your project structure */
 @source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
-/* @custom-variant dark (&:is(.dark *)) */
 
 /* 苹果风格主题定义 */
 @theme {
@@ -77,6 +76,12 @@ body {
   color: var(--color-apple-gray-900);
 }
 
+/* 暗黑模式下的 body 样式 */
+.dark body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
 /* 苹果风格滚动条 */
 ::-webkit-scrollbar {
   width: 6px;
@@ -94,6 +99,15 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.3);
+}
+
+/* 暗黑模式下的滚动条 */
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
 }
 
 /* 苹果风格动画 */
@@ -208,6 +222,36 @@ body {
 .apple-card-elevated:hover {
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(255, 255, 255, 0.4) inset;
+  transform: translateY(-2px);
+}
+
+/* 暗黑模式下的卡片样式 */
+.dark .apple-glass {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border: 0.5px solid rgba(148, 163, 184, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 0 0.5px rgba(148, 163, 184, 0.05) inset;
+}
+
+.dark .apple-glass:hover {
+  background: rgba(30, 41, 59, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 0 0.5px rgba(148, 163, 184, 0.08) inset;
+  transform: translateY(-1px);
+}
+
+.dark .apple-card-elevated {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  border: 0.5px solid rgba(148, 163, 184, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 0 0.5px rgba(148, 163, 184, 0.05) inset;
+}
+
+.dark .apple-card-elevated:hover {
+  background: rgba(30, 41, 59, 0.6);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.25),
+    0 0 0 0.5px rgba(148, 163, 184, 0.08) inset;
   transform: translateY(-2px);
 }
 
@@ -410,6 +454,43 @@ body {
   background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07), 0 3px 8px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(255, 255, 255, 0.3) inset;
   transform: translateY(-1.5px);
+}
+
+/* 暗黑模式下的 premium-glass */
+.dark .premium-glass {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+  border: 0.5px solid rgba(148, 163, 184, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15), 0 0 0 0.5px rgba(148, 163, 184, 0.05) inset;
+}
+
+.dark .premium-glass:hover {
+  background: rgba(30, 41, 59, 0.9);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3), 0 3px 8px rgba(0, 0, 0, 0.2), 0 0 0 0.5px rgba(148, 163, 184, 0.08) inset;
+  transform: translateY(-1.5px);
+}
+
+/* 暗黑模式下的 input-premium */
+.dark .input-premium {
+  background: rgba(30, 41, 59, 0.8) !important;
+  border: 1px solid rgba(148, 163, 184, 0.2) !important;
+  color: #f1f5f9 !important;
+}
+
+.dark .input-premium::placeholder {
+  color: #94a3b8 !important;
+}
+
+.dark .input-premium:hover {
+  background: rgba(0, 0, 0, 0.9) !important;
+  border-color: rgba(59, 130, 246, 0.7) !important;
+}
+
+.dark .input-premium:focus {
+  background: rgba(0, 0, 0, 1) !important;
+  border-color: rgba(59, 130, 246, 0.8) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
 }
 
 /* 🍎 Apple 阴影系统 - 精致而克制 */
@@ -866,6 +947,17 @@ body {
 
   .input-premium::placeholder {
     color: #94a3b8;
+  }
+
+  .input-premium:hover {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(59, 130, 246, 0.7);
+  }
+
+  .input-premium:focus {
+    background: rgba(0, 0, 0, 1);
+    border-color: rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
   }
 
   .loading-skeleton {
@@ -1690,6 +1782,57 @@ body {
 
 .markdown-content h4 {
   @apply text-base font-semibold text-apple-gray-900 mt-4 mb-2;
+}
+
+/* 暗黑模式下的 Markdown 内容样式 */
+.dark .markdown-content {
+  @apply text-slate-300;
+}
+
+.dark .markdown-content h1 {
+  @apply text-slate-200 border-b border-slate-700;
+}
+
+.dark .markdown-content h2,
+.dark .markdown-content h3,
+.dark .markdown-content h4 {
+  @apply text-slate-200;
+}
+
+.dark .markdown-content blockquote {
+  @apply border-l-4 border-blue-500/30 bg-blue-500/10 text-slate-400;
+}
+
+.dark .markdown-content code {
+  @apply bg-slate-800 text-slate-200;
+}
+
+.dark .markdown-content pre {
+  @apply bg-slate-900 text-slate-100;
+}
+
+.dark .markdown-content table {
+  @apply border border-slate-700;
+}
+
+.dark .markdown-content th {
+  @apply bg-slate-800 border border-slate-700 text-slate-200;
+}
+
+.dark .markdown-content td {
+  @apply border border-slate-700;
+}
+
+.dark .markdown-content a {
+  @apply text-blue-400 hover:text-blue-300;
+}
+
+.dark .markdown-content strong {
+  @apply text-slate-200;
+}
+
+.dark .markdown-content hr {
+  @apply border-t border-slate-700;
 }
 
 .markdown-content p {

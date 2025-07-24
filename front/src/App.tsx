@@ -9,23 +9,26 @@ import Dishes from "./pages/Dishes";
 import DishDetail from "./pages/DishDetail";
 import Favorites from "./pages/Favorites";
 import { AppCacheProvider } from "./contexts/AppCacheContext";
+import { ThemeProvider } from "./contexts/ThemeContext.tsx";
 
 function App() {
   return (
-    <AppCacheProvider>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/tips" element={<Tips />} />
-          <Route path="/tips/:id" element={<TipDetail />} />
-          <Route path="/starsystem" element={<StarSystem />} />
-          <Route path="/starsystem/:id" element={<StarSystemDetail />} />
-          <Route path="/dishes" element={<Dishes />} />
-          <Route path="/dishes/:filePath" element={<DishDetail />} />
-          <Route path="/favorites" element={<Favorites />} />
-        </Routes>
-      </Layout>
-    </AppCacheProvider>
+    <ThemeProvider>
+      <AppCacheProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/tips" element={<Tips />} />
+            <Route path="/tips/:id" element={<TipDetail />} />
+            <Route path="/starsystem" element={<StarSystem />} />
+            <Route path="/starsystem/:id" element={<StarSystemDetail />} />
+            <Route path="/dishes" element={<Dishes />} />
+            <Route path="/dishes/:filePath" element={<DishDetail />} />
+            <Route path="/favorites" element={<Favorites />} />
+          </Routes>
+        </Layout>
+      </AppCacheProvider>
+    </ThemeProvider>
   );
 }
 

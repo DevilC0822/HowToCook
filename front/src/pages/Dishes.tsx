@@ -6,10 +6,12 @@ import type { Dish, DishSearchOptions, DishesResponse } from "../services/dishes
 import { addFavorite, removeFavoriteWithCache, isFavorite } from "../utils/favorites";
 import CacheIndicator from "../components/CacheIndicator";
 import { useAppCache } from "../hooks/useAppCache";
+import { useTheme } from "../hooks/useTheme";
 
 export default function Dishes() {
   const navigate = useNavigate();
   const appCache = useAppCache();
+  const { isDark } = useTheme();
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -469,14 +471,17 @@ export default function Dishes() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
+      <div className={`min-h-screen transition-colors duration-300 ${isDark
+        ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
+        : 'bg-gradient-to-br from-slate-50 via-white to-slate-50'
+        }`}>
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center space-y-6">
             {/* 精致的加载动画 */}
             <div className="relative">
               <div className="w-20 h-20 mx-auto">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-spin">
-                  <div className="absolute inset-2 bg-white rounded-full"></div>
+                  <div className={`absolute inset-2 rounded-full ${isDark ? 'bg-slate-800' : 'bg-white'}`}></div>
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-2xl">🍽️</span>
@@ -484,8 +489,10 @@ export default function Dishes() {
               </div>
             </div>
             <div className="space-y-2">
-              <h3 className="text-xl font-semibold text-slate-800">正在加载菜品大全</h3>
-              <p className="text-slate-600">为您精心准备丰富的美食菜谱...</p>
+              <h3 className={`text-xl font-semibold transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'
+                }`}>正在加载菜品大全</h3>
+              <p className={`transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'
+                }`}>为您精心准备丰富的美食菜谱...</p>
             </div>
           </div>
         </div>
@@ -495,12 +502,17 @@ export default function Dishes() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
+      <div className={`min-h-screen transition-colors duration-300 ${isDark
+        ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
+        : 'bg-gradient-to-br from-slate-50 via-white to-slate-50'
+        }`}>
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center space-y-6 max-w-md mx-auto p-8">
             <div className="text-6xl mb-4">😞</div>
-            <h3 className="text-xl font-semibold text-slate-800">加载失败</h3>
-            <p className="text-slate-600">{error}</p>
+            <h3 className={`text-xl font-semibold transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'
+              }`}>加载失败</h3>
+            <p className={`transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'
+              }`}>{error}</p>
             <Button
               onClick={loadInitialData}
               className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
@@ -514,7 +526,10 @@ export default function Dishes() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 scrollbar-premium">
+    <div className={`min-h-screen scrollbar-premium transition-colors duration-300 ${isDark
+      ? 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900'
+      : 'bg-gradient-to-br from-slate-50 via-white to-blue-50/30'
+      }`}>
       {/* 缓存状态指示器 */}
       <CacheIndicator
         isFromCache={isFromCache}
@@ -539,10 +554,14 @@ export default function Dishes() {
                 <span className="text-3xl animate-float">🍽️</span>
               </div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 bg-clip-text text-transparent">
+            <h1 className={`text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r bg-clip-text text-transparent transition-colors duration-300 ${isDark
+              ? 'from-slate-200 via-slate-100 to-slate-200'
+              : 'from-slate-800 via-slate-700 to-slate-800'
+              }`}>
               菜品大全
             </h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className={`text-xl max-w-3xl mx-auto leading-relaxed mb-8 transition-colors duration-300 ${isDark ? 'text-slate-300' : 'text-slate-600'
+              }`}>
               精选家常美食菜谱，包含详细制作步骤与营养搭配建议
             </p>
           </div>
@@ -558,11 +577,21 @@ export default function Dishes() {
                         placeholder="搜索菜品名称、食材、做法..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="text-lg input-premium"
                         size="lg"
                         classNames={{
-                          input: "text-slate-700 placeholder:text-slate-400 text-sm md:text-base",
-                          inputWrapper: "bg-slate-50/50 border-slate-200/50 hover:border-blue-300/50 focus-within:border-blue-500/50 rounded-2xl h-12 md:h-14 px-4 md:px-6 transition-all duration-300"
+                          base: `text-lg input-premium ${isDark ? 'border-none!' : ''}`,
+                          mainWrapper: `transition-colors duration-300 ${isDark
+                            ? 'bg-[#1b263b]'
+                            : ''
+                            }`,
+                          input: `text-sm md:text-base transition-colors duration-300 ${isDark
+                            ? 'text-slate-200 placeholder:text-slate-500'
+                            : 'text-slate-700 placeholder:text-slate-400'
+                            }`,
+                          inputWrapper: `rounded-2xl h-12 md:h-14 px-4 md:px-6 transition-all duration-300 ${isDark
+                            ? '!bg-slate-800/70 border-slate-700/50 hover:!bg-black hover:border-blue-400/70 hover:shadow-lg hover:shadow-blue-500/10 focus-within:!bg-black focus-within:border-blue-400/80 focus-within:shadow-xl focus-within:shadow-blue-500/20'
+                            : 'border-slate-200/50 hover:border-blue-300/50 focus-within:border-blue-500/50'
+                            }`,
                         }}
                         startContent={
                           <div className="w-5 h-5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center group-hover:scale-[1.01] transition-transform duration-300">
@@ -573,7 +602,10 @@ export default function Dishes() {
                       />
                       {/* 搜索建议提示 */}
                       <div className="absolute top-full left-0 right-0 mt-2 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none">
-                        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 apple-icon-shadow text-xs text-slate-600">
+                        <div className={`backdrop-blur-sm rounded-xl p-3 apple-icon-shadow text-xs transition-colors duration-300 ${isDark
+                          ? 'bg-slate-800/90 text-slate-400'
+                          : 'bg-white/90 text-slate-600'
+                          }`}>
                           💡 试试搜索：鸡蛋、家常菜、川菜、简单
                         </div>
                       </div>
@@ -604,8 +636,12 @@ export default function Dishes() {
 
           {/* 分类导航 - 完全重新设计 */}
           <div className="mb-16 animate-slide-in" style={{ animationDelay: '0.1s' }}>
-            <div className="apple-card-elevated rounded-3xl p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-slate-800 mb-6 md:mb-8 text-center">🎯 精选分类</h2>
+            <div className={`rounded-3xl p-6 md:p-8 transition-colors duration-300 ${isDark
+              ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+              : 'apple-card-elevated'
+              }`}>
+              <h2 className={`text-2xl font-bold mb-6 md:mb-8 text-center transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'
+                }`}>🎯 精选分类</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4">
                 {categories.slice(0, 12).map((category, index) => {
                   const isSelected = selectedCategory === category.id;
@@ -623,7 +659,9 @@ export default function Dishes() {
                         relative overflow-hidden rounded-2xl p-4 md:p-6 text-center card-premium
                         ${isSelected
                           ? `bg-gradient-to-br ${iconInfo.gradient} text-white shadow-2xl scale-105 selected-premium`
-                          : 'bg-white/80 backdrop-blur-sm text-slate-700 hover:bg-white apple-icon-shadow hover:shadow-xl'
+                          : isDark
+                            ? 'bg-slate-700/50 backdrop-blur-sm text-slate-300 hover:bg-slate-600/50 apple-icon-shadow hover:shadow-xl border border-slate-600/50'
+                            : 'bg-white/80 backdrop-blur-sm text-slate-700 hover:bg-white apple-icon-shadow hover:shadow-xl'
                         }
                         transition-all duration-300
                       `}>
@@ -640,7 +678,12 @@ export default function Dishes() {
                           <div className="text-2xl md:text-3xl mb-2 md:mb-3 transform group-hover:scale-[1.02] group-active:scale-95 transition-transform duration-300">
                             {category.icon}
                           </div>
-                          <div className={`text-xs md:text-sm font-semibold ${isSelected ? 'text-white' : 'text-slate-800'}`}>
+                          <div className={`text-xs md:text-sm font-semibold transition-colors duration-300 ${isSelected
+                            ? 'text-white'
+                            : isDark
+                              ? 'text-slate-300'
+                              : 'text-slate-800'
+                            }`}>
                             {category.name}
                           </div>
                         </div>
@@ -656,9 +699,13 @@ export default function Dishes() {
           <div className="mb-16">
             {searching && (
               <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-4 rounded-2xl apple-icon-shadow">
+                <div className={`inline-flex items-center gap-3 px-6 py-4 rounded-2xl apple-icon-shadow transition-colors duration-300 ${isDark
+                  ? 'bg-slate-800/80 backdrop-blur-sm'
+                  : 'bg-white/80 backdrop-blur-sm'
+                  }`}>
                   <div className="w-6 h-6 border-2 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
-                  <span className="text-slate-700 font-medium">正在搜索美味菜品...</span>
+                  <span className={`font-medium transition-colors duration-300 ${isDark ? 'text-slate-300' : 'text-slate-700'
+                    }`}>正在搜索美味菜品...</span>
                 </div>
               </div>
             )}
@@ -675,7 +722,10 @@ export default function Dishes() {
                     style={{ animationDelay: `${0.05 * (index % 20)}s` }}
                   >
                     {/* 设置统一高度：h-[420px] */}
-                    <div className="h-[420px] apple-glass rounded-3xl overflow-hidden flex flex-col">
+                    <div className={`h-[420px] rounded-3xl overflow-hidden flex flex-col transition-colors duration-300 ${isDark
+                      ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+                      : 'apple-glass'
+                      }`}>
                       {/* 卡片头部 - flex-1 让内容区域自动填充 */}
                       <div className="relative p-6 pb-4 flex-1 flex flex-col">
                         {/* 背景装饰 */}
@@ -685,10 +735,12 @@ export default function Dishes() {
                           {/* 标题区域 - 固定高度 */}
                           <div className="flex items-start justify-between mb-4 min-h-[80px]">
                             <div className="flex-1 pr-4">
-                              <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2 leading-tight">
+                              <h3 className={`text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2 leading-tight ${isDark ? 'text-slate-200' : 'text-slate-800'
+                                }`}>
                                 {dish.name}
                               </h3>
-                              <p className="text-slate-600 text-sm leading-relaxed line-clamp-2">
+                              <p className={`text-sm leading-relaxed line-clamp-2 transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'
+                                }`}>
                                 {dish.description}
                               </p>
                             </div>
@@ -723,7 +775,10 @@ export default function Dishes() {
                             <div className={`${difficultyStyle.bg} ${difficultyStyle.text} ${difficultyStyle.border} border px-3 py-1.5 rounded-xl text-xs font-semibold`}>
                               {dish.difficulty}
                             </div>
-                            <div className="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-xl text-xs font-medium">
+                            <div className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-colors duration-300 ${isDark
+                              ? 'bg-slate-700 text-slate-300'
+                              : 'bg-slate-100 text-slate-700'
+                              }`}>
                               {dish.categoryName || dish.category}
                             </div>
                           </div>
@@ -741,17 +796,26 @@ export default function Dishes() {
                                   </div>
                                 ))}
                                 {dish.tags && dish.tags.length > 3 && (
-                                  <div className="bg-slate-100 text-slate-600 px-2.5 py-1 rounded-lg text-xs font-medium">
+                                  <div className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-colors duration-300 ${isDark
+                                    ? 'bg-slate-700 text-slate-400'
+                                    : 'bg-slate-100 text-slate-600'
+                                    }`}>
                                     +{dish.tags.length - 3}
                                   </div>
                                 )}
                               </div>
                             ) : (
                               <div className="flex items-center gap-1.5">
-                                <div className="bg-slate-50 text-slate-400 px-2.5 py-1 rounded-lg text-xs font-medium border border-slate-100">
+                                <div className={`px-2.5 py-1 rounded-lg text-xs font-medium border transition-colors duration-300 ${isDark
+                                  ? 'bg-slate-800 text-slate-500 border-slate-700'
+                                  : 'bg-slate-50 text-slate-400 border-slate-100'
+                                  }`}>
                                   经典菜品
                                 </div>
-                                <div className="bg-slate-50 text-slate-400 px-2.5 py-1 rounded-lg text-xs font-medium border border-slate-100">
+                                <div className={`px-2.5 py-1 rounded-lg text-xs font-medium border transition-colors duration-300 ${isDark
+                                  ? 'bg-slate-800 text-slate-500 border-slate-700'
+                                  : 'bg-slate-50 text-slate-400 border-slate-100'
+                                  }`}>
                                   美味
                                 </div>
                               </div>
@@ -798,7 +862,9 @@ export default function Dishes() {
                           <Button
                             className={isFav
                               ? "bg-gradient-to-r from-rose-500 to-pink-500 text-white border-0 px-4 py-2.5 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
-                              : "bg-white/80 backdrop-blur-sm text-slate-700 border border-slate-200 hover:border-rose-300 px-4 py-2.5 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
+                              : isDark
+                                ? "bg-slate-700/80 backdrop-blur-sm text-slate-300 border border-slate-600 hover:border-rose-400 px-4 py-2.5 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
+                                : "bg-white/80 backdrop-blur-sm text-slate-700 border border-slate-200 hover:border-rose-300 px-4 py-2.5 rounded-2xl font-semibold apple-icon-shadow hover:shadow-xl transition-all duration-300 transform hover:scale-[1.01]"
                             }
                             size="sm"
                             onClick={() => handleToggleFavorite(dish)}
@@ -826,20 +892,26 @@ export default function Dishes() {
                       </div>
                       <div className="text-center">
                         <p className="text-blue-600 font-semibold text-lg">正在加载更多菜谱...</p>
-                        <p className="text-slate-500 text-sm mt-1">请稍候，为您搜寻美味佳肴</p>
+                        <p className={`text-sm mt-1 transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-500'
+                          }`}>请稍候，为您搜寻美味佳肴</p>
                       </div>
                     </div>
                   </div>
                 )}
 
                 {/* 加载更多按钮 - 醒目设计 */}
-                <div className="apple-card-elevated rounded-3xl p-8 max-w-2xl mx-auto">
+                <div className={`rounded-3xl p-8 max-w-2xl mx-auto transition-colors duration-300 ${isDark
+                  ? 'bg-slate-800/50 backdrop-blur-xl border border-slate-700/50'
+                  : 'apple-card-elevated'
+                  }`}>
                   <div className="text-center">
                     <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl apple-icon-shadow flex items-center justify-center">
                       <span className="text-white text-2xl">📚</span>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-800 mb-2">还有更多精彩菜谱</h3>
-                    <p className="text-slate-600 mb-6">已展示 {dishes.length} 道菜品，更多美味等您发现</p>
+                    <h3 className={`text-xl font-bold mb-2 transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'
+                      }`}>还有更多精彩菜谱</h3>
+                    <p className={`mb-6 transition-colors duration-300 ${isDark ? 'text-slate-400' : 'text-slate-600'
+                      }`}>已展示 {dishes.length} 道菜品，更多美味等您发现</p>
                     <Button
                       onClick={loadMoreDishes}
                       disabled={loadingMore}
@@ -883,15 +955,18 @@ export default function Dishes() {
 
           {/* 底部建议卡片 - 精致化设计 */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <div className="max-w-4xl mx-auto bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 backdrop-blur-xl border border-amber-200/50 rounded-3xl p-8 shadow-xl">
+            <div className={`max-w-4xl mx-auto backdrop-blur-xl rounded-3xl p-8 shadow-xl border transition-colors duration-300 ${isDark
+              ? 'bg-gradient-to-r from-slate-800/60 via-slate-700/60 to-slate-800/60 border-slate-600/30'
+              : 'bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 border-amber-200/50'
+              }`}>
               <div className="text-center">
                 <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl apple-icon-shadow flex items-center justify-center">
                   <span className="text-white text-2xl">💡</span>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-4">
+                <h3 className={`text-2xl font-bold mb-4 transition-colors duration-300 ${isDark ? 'text-slate-200' : 'text-slate-800'}`}>
                   烹饪建议
                 </h3>
-                <p className="text-slate-700 leading-relaxed text-lg max-w-2xl mx-auto">
+                <p className={`leading-relaxed text-lg max-w-2xl mx-auto transition-colors duration-300 ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
                   建议从简单的家常菜开始练习，循序渐进提升烹饪技巧。
                   <br />
                   新鲜食材和准确的时间控制是制作美味菜肴的关键要素。
