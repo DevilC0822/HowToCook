@@ -1,0 +1,2074 @@
+@import 'tailwindcss';
+@plugin './hero.ts';
+/* Note: You may need to change the path to fit your project structure */
+@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+/* @custom-variant dark (&:is(.dark *)) */
+
+/* 苹果风格主题定义 */
+@theme {
+  --font-family-apple: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Helvetica Neue', Arial, sans-serif;
+
+  /* 苹果风格调色板 */
+  --color-apple-blue: #007aff;
+  --color-apple-blue-light: #40a9ff;
+  --color-apple-blue-dark: #0056cc;
+  --color-apple-green: #34c759;
+  --color-apple-orange: #ff9500;
+  --color-apple-red: #ff3b30;
+  --color-apple-purple: #af52de;
+  --color-apple-pink: #ff2d92;
+  --color-apple-yellow: #ffcc02;
+  --color-apple-teal: #5ac8fa;
+  --color-apple-indigo: #5856d6;
+
+  /* 苹果风格灰色系 */
+  --color-apple-gray-50: #f2f2f7;
+  --color-apple-gray-100: #e5e5ea;
+  --color-apple-gray-200: #d1d1d6;
+  --color-apple-gray-300: #c7c7cc;
+  --color-apple-gray-400: #aeaeb2;
+  --color-apple-gray-500: #8e8e93;
+  --color-apple-gray-600: #636366;
+  --color-apple-gray-700: #48484a;
+  --color-apple-gray-800: #3a3a3c;
+  --color-apple-gray-900: #1c1c1e;
+
+  /* 苹果风格间距 */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-128: 32rem;
+
+  /* 苹果风格圆角 */
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+
+  /* 苹果风格阴影 */
+  --shadow-apple: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-apple-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-apple-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* 苹果风格动画时长 */
+  --animate-duration-fast: 0.2s;
+  --animate-duration-normal: 0.3s;
+  --animate-duration-slow: 0.5s;
+
+  /* 苹果风格渐变 */
+  --gradient-apple-blue: linear-gradient(135deg, #007aff 0%, #40a9ff 100%);
+  --gradient-apple-purple: linear-gradient(135deg, #af52de 0%, #ff2d92 100%);
+  --gradient-apple-sunset: linear-gradient(135deg, #ff9500 0%, #ff3b30 100%);
+}
+
+/* 全局样式重置 */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-family-apple);
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  background-color: var(--color-apple-gray-50);
+  color: var(--color-apple-gray-900);
+}
+
+/* 苹果风格滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* 苹果风格动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(0, 122, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 122, 255, 0.6);
+  }
+}
+
+/* 文本截断样式 */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 🍎 Apple 设计系统 - 卡片样式 */
+
+/* 基础苹果玻璃效果 - 极简纯净 */
+.apple-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 0.5px rgba(255, 255, 255, 0.2) inset;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.apple-glass:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(255, 255, 255, 0.25) inset;
+  transform: translateY(-1px);
+}
+
+/* 深色模式支持 */
+.apple-glass-dark {
+  background: rgba(28, 28, 30, 0.85);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 0 0 0.5px rgba(255, 255, 255, 0.05) inset;
+}
+
+/* 高级卡片 - 用于重要内容 */
+.apple-card-elevated {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(255, 255, 255, 0.3) inset;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.apple-card-elevated:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(255, 255, 255, 0.4) inset;
+  transform: translateY(-2px);
+}
+
+/* 小卡片 - 用于列表项和紧凑展示 */
+.apple-card-compact {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px) saturate(110%);
+  -webkit-backdrop-filter: blur(8px) saturate(110%);
+  border: 0.5px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(255, 255, 255, 0.15) inset;
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.apple-card-compact:hover {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03), 0 0 0 0.5px rgba(255, 255, 255, 0.2) inset;
+  transform: translateY(-0.5px);
+}
+
+/* 苹果风格阴影 */
+.apple-shadow {
+  box-shadow: var(--shadow-apple);
+}
+
+.apple-shadow-lg {
+  box-shadow: var(--shadow-apple-lg);
+}
+
+.apple-shadow-xl {
+  box-shadow: var(--shadow-apple-xl);
+}
+
+/* 苹果风格按钮 */
+.apple-button {
+  transition: all var(--animate-duration-fast) ease-out;
+  transform: translateY(0);
+}
+
+.apple-button:hover {
+  transform: translateY(-1px);
+}
+
+.apple-button:active {
+  transform: translateY(0);
+}
+
+/* 苹果风格卡片 */
+.apple-card {
+  transition: all var(--animate-duration-normal) ease-out;
+  transform: translateY(0) scale(1);
+}
+
+.apple-card:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* 苹果风格渐变 */
+.apple-gradient-blue {
+  background: var(--gradient-apple-blue);
+}
+
+.apple-gradient-purple {
+  background: var(--gradient-apple-purple);
+}
+
+.apple-gradient-sunset {
+  background: var(--gradient-apple-sunset);
+}
+
+.apple-text-gradient {
+  background: var(--gradient-apple-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 苹果风格动画类 */
+.animate-fade-in-up {
+  animation: fadeInUp var(--animate-duration-slow) ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn var(--animate-duration-normal) ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--animate-duration-normal) ease-out;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* 苹果风格输入框 */
+.apple-input {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-apple-gray-200);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-family: var(--font-family-apple);
+  font-size: 16px;
+  color: var(--color-apple-gray-900);
+  transition: all var(--animate-duration-fast) ease-out;
+}
+
+.apple-input:focus {
+  outline: none;
+  border-color: var(--color-apple-blue);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.apple-input::placeholder {
+  color: var(--color-apple-gray-500);
+}
+
+/* 苹果风格按钮变体 */
+.apple-button-primary {
+  background: var(--color-apple-blue);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all var(--animate-duration-fast) ease-out;
+}
+
+.apple-button-primary:hover {
+  background: var(--color-apple-blue-dark);
+  transform: translateY(-1px);
+}
+
+.apple-button-secondary {
+  background: var(--color-apple-gray-100);
+  color: var(--color-apple-gray-700);
+  border: 1px solid var(--color-apple-gray-200);
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all var(--animate-duration-fast) ease-out;
+}
+
+.apple-button-secondary:hover {
+  background: var(--color-apple-gray-200);
+  transform: translateY(-1px);
+}
+
+.apple-button-danger {
+  background: var(--color-apple-red-light);
+  color: var(--color-apple-red);
+  border: 1px solid var(--color-apple-red-light);
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all var(--animate-duration-fast) ease-out;
+}
+
+.apple-button-danger:hover {
+  background: var(--color-apple-red);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* 精品级装饰元素 */
+.premium-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+/* Apple Glass 毛玻璃效果 */
+@supports (backdrop-filter: blur(15px)) {
+  .apple-glass {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+}
+
+/* 新增精品级样式 */
+
+/* 高级毛玻璃效果 - 苹果级别的精致 */
+.premium-glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+  border: 0.5px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03), 0 0 0 0.5px rgba(255, 255, 255, 0.25) inset;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.premium-glass:hover {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07), 0 3px 8px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(255, 255, 255, 0.3) inset;
+  transform: translateY(-1.5px);
+}
+
+/* 🍎 Apple 阴影系统 - 精致而克制 */
+.shadow-apple-sm {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(255, 255, 255, 0.15) inset;
+}
+
+.shadow-apple {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 0.5px rgba(255, 255, 255, 0.2) inset;
+}
+
+.shadow-apple-md {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03), 0 0 0 0.5px rgba(255, 255, 255, 0.25) inset;
+}
+
+.shadow-apple-lg {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(255, 255, 255, 0.25) inset;
+}
+
+.shadow-apple-xl {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(255, 255, 255, 0.3) inset;
+}
+
+/* 🍎 Apple 按钮系统 - 配合卡片的整体设计 */
+.apple-btn {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px) saturate(110%);
+  -webkit-backdrop-filter: blur(8px) saturate(110%);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 0.5px rgba(255, 255, 255, 0.2) inset;
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.apple-btn:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 0.5px rgba(255, 255, 255, 0.25) inset;
+  transform: translateY(-0.5px);
+}
+
+.apple-btn-primary {
+  background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 122, 255, 0.15), 0 1px 3px rgba(0, 122, 255, 0.1);
+  color: white;
+}
+
+.apple-btn-primary:hover {
+  background: linear-gradient(135deg, #0056cc 0%, #4c46b8 100%);
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2), 0 2px 6px rgba(0, 122, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+/* 小图标的精致阴影 */
+.apple-icon-shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* 保持向后兼容 */
+.shadow-premium {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+/* 高级动画 */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 应用动画类 */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.8s ease-out forwards;
+}
+
+/* 精致渐变背景 */
+.gradient-premium {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.1) 0%,
+    rgba(168, 85, 247, 0.1) 25%,
+    rgba(236, 72, 153, 0.1) 50%,
+    rgba(59, 130, 246, 0.1) 75%,
+    rgba(16, 185, 129, 0.1) 100%
+  );
+}
+
+/* 高级按钮效果 */
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.btn-premium:hover::before {
+  left: 100%;
+}
+
+/* 文字剪切效果 */
+.text-gradient-premium {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 卡片悬停效果 */
+.card-premium {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.card-premium:hover {
+  transform: translateY(-8px) rotateX(5deg);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+/* 响应式网格增强 */
+@media (min-width: 1536px) {
+  .grid-premium {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+/* 滚动条美化 */
+.scrollbar-premium::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-premium::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.scrollbar-premium::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.6), rgba(168, 85, 247, 0.6));
+  border-radius: 3px;
+}
+
+.scrollbar-premium::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(168, 85, 247, 0.8));
+}
+
+/* 加载状态美化 */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* 选择状态增强 */
+.selected-premium {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+/* 高级模糊效果 */
+.blur-premium {
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+}
+
+/* 3D 变换效果 */
+.transform-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.transform-3d:hover {
+  transform: rotateY(5deg) rotateX(5deg);
+}
+
+/* 高级边框效果 */
+.border-premium {
+  border: 1px solid;
+  border-image: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(168, 85, 247, 0.3)) 1;
+}
+
+/* 文字发光效果 */
+.text-glow {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* 高级徽章样式 */
+.badge-premium {
+  position: relative;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(168, 85, 247, 0.9));
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.badge-premium::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 1), rgba(168, 85, 247, 1));
+  border-radius: 13px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.badge-premium:hover::after {
+  opacity: 1;
+}
+
+/* 高级分隔线 */
+.divider-premium {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.3), rgba(168, 85, 247, 0.3), transparent);
+  margin: 2rem 0;
+}
+
+/* 高级输入框样式 */
+.input-premium {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.input-premium:focus {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* 优化现有样式 */
+.apple-card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.apple-card-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+/* 响应式和移动端优化 */
+@media (max-width: 768px) {
+  /* 移动端动画优化 */
+  .animate-scale-in,
+  .animate-fade-in-up,
+  .animate-slide-in {
+    animation-duration: 0.4s;
+  }
+
+  /* 移动端卡片优化 */
+  .card-premium:hover {
+    transform: translateY(-2px);
+  }
+
+  /* 移动端菜品卡片高度调整 */
+  .h-\[480px\] {
+    height: 420px !important;
+  }
+
+  /* 移动端按钮优化 */
+  .btn-premium {
+    min-height: 44px; /* iOS触摸友好尺寸 */
+  }
+
+  /* 移动端浮动元素隐藏 */
+  .animate-float {
+    display: none;
+  }
+
+  /* 移动端毛玻璃效果优化 */
+  .premium-glass {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* 移动端字体优化 */
+  .text-gradient-premium {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  /* 移动端阴影减少 */
+  .shadow-premium-xl {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+@media (max-width: 480px) {
+  /* 小屏幕专用优化 */
+  .premium-glass {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* 小屏幕菜品卡片高度进一步调整 */
+  .h-\[480px\] {
+    height: 380px !important;
+  }
+
+  /* 小屏幕网格优化 */
+  .grid-premium {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* 小屏幕按钮优化 */
+  .btn-premium {
+    font-size: 0.875rem;
+    min-height: 48px;
+  }
+}
+
+/* 高DPI屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  .premium-glass {
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+  }
+
+  .shadow-premium-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  .premium-glass {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+  }
+
+  .input-premium {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    color: #f1f5f9;
+  }
+
+  .input-premium::placeholder {
+    color: #94a3b8;
+  }
+
+  .loading-skeleton {
+    background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  }
+}
+
+/* 减少动画偏好支持 */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-shimmer,
+  .animate-scale-in,
+  .animate-slide-up,
+  .animate-fade-in-up,
+  .animate-slide-in {
+    animation: none;
+  }
+
+  .card-premium,
+  .btn-premium,
+  .apple-card-hover {
+    transition: none;
+  }
+
+  .transform-3d:hover {
+    transform: none;
+  }
+}
+
+/* 超大屏幕优化 */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .grid-premium {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  .premium-glass {
+    backdrop-filter: blur(25px) saturate(200%);
+    -webkit-backdrop-filter: blur(25px) saturate(200%);
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .animate-float,
+  .shadow-premium,
+  .shadow-premium-lg,
+  .shadow-premium-xl,
+  .premium-glass {
+    display: none;
+  }
+
+  .card-premium {
+    border: 1px solid #e5e7eb;
+    box-shadow: none;
+  }
+}
+
+/* 触摸设备专用样式 */
+@media (hover: none) and (pointer: coarse) {
+  .btn-premium:hover::before {
+    display: none;
+  }
+
+  .card-premium:hover {
+    transform: none;
+  }
+
+  /* 触摸设备按钮增大 */
+  .btn-premium {
+    min-height: 48px;
+    font-size: 1rem;
+  }
+
+  /* 触摸友好的间距 */
+  .gap-3 {
+    gap: 1rem;
+  }
+}
+
+/* 键盘导航优化 */
+.btn-premium:focus,
+.input-premium:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+  .premium-glass {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+  }
+
+  .btn-premium {
+    border: 2px solid currentColor;
+  }
+
+  .text-gradient-premium {
+    -webkit-text-fill-color: unset;
+    background: unset;
+    color: #1f2937;
+  }
+}
+
+/* Safari专用优化 */
+@supports (-webkit-appearance: none) {
+  .premium-glass {
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  .scrollbar-premium::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+/* Firefox专用优化 */
+@-moz-document url-prefix() {
+  .premium-glass {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .scrollbar-premium {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(99, 102, 241, 0.6) transparent;
+  }
+}
+
+/* 性能优化 */
+.card-premium,
+.btn-premium,
+.apple-card-hover {
+  will-change: transform;
+}
+
+.animate-float,
+.animate-pulse-glow,
+.animate-shimmer {
+  will-change: auto;
+}
+
+/* 无障碍访问增强 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 加载状态优化 */
+.loading-premium {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  animation: shimmer 2s infinite;
+}
+
+/* 错误状态样式 */
+.error-premium {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.1));
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #991b1b;
+}
+
+/* 成功状态样式 */
+.success-premium {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.1));
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #166534;
+}
+
+/* 优化滚动性能 */
+.scrollbar-premium {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+/* 内容安全优化 */
+.premium-glass,
+.card-premium,
+.btn-premium {
+  isolation: isolate;
+}
+
+/* 最终优化 */
+body {
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 菜品卡片专用样式 */
+.dish-card-container {
+  height: 480px;
+}
+
+/* Line-clamp 兼容性支持 */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Firefox line-clamp 支持 */
+@-moz-document url-prefix() {
+  .line-clamp-2 {
+    display: block;
+    max-height: 2.4em; /* 约等于2行高度 */
+    line-height: 1.2;
+  }
+
+  .line-clamp-3 {
+    display: block;
+    max-height: 3.6em; /* 约等于3行高度 */
+    line-height: 1.2;
+  }
+}
+
+/* 确保卡片内容均匀分布 */
+.dish-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dish-card-title-area {
+  min-height: 80px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.dish-card-info-area {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.dish-card-tags-area {
+  min-height: 32px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.dish-card-features-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 60px;
+}
+
+.dish-card-actions {
+  flex-shrink: 0;
+  padding-top: 1rem;
+}
+
+/* 移动端卡片样式调整 */
+@media (max-width: 768px) {
+  .dish-card-container {
+    height: 420px;
+  }
+
+  .dish-card-title-area {
+    min-height: 70px;
+  }
+
+  .dish-card-features-area {
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dish-card-container {
+    height: 380px;
+  }
+
+  .dish-card-title-area {
+    min-height: 60px;
+  }
+
+  .dish-card-features-area {
+    min-height: 40px;
+  }
+}
+
+/* 文本截断增强 */
+.text-ellipsis-multiline {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+/* 确保弹性布局在Safari中正确工作 */
+@supports (-webkit-appearance: none) {
+  .dish-card-content {
+    min-height: 100%;
+  }
+}
+
+/* 菜品卡片加载骨架屏 */
+.dish-card-skeleton {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* 菜品卡片悬停增强效果 */
+.dish-card-hover {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dish-card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+/* 菜品卡片内容区域动画 */
+.dish-card-content-area {
+  transition: all 0.3s ease;
+}
+
+.dish-card-hover:hover .dish-card-content-area {
+  transform: translateY(-2px);
+}
+
+/* 菜品卡片按钮区域增强 */
+.dish-card-actions-area {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* 菜品标签的微动画 */
+.dish-tag {
+  transition: all 0.2s ease;
+}
+
+.dish-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 菜品卡片网格优化 */
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .dishes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dishes-grid {
+    gap: 1rem;
+  }
+}
+
+/* 菜品卡片内容层次优化 */
+.dish-title-gradient {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dish-description-fade {
+  background: linear-gradient(to bottom, #64748b 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 菜品难度标签渐变 */
+.difficulty-badge-gradient {
+  background: linear-gradient(135deg, currentColor 0%, currentColor 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.difficulty-badge-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.difficulty-badge-gradient:hover::before {
+  left: 100%;
+}
+
+/* 星级图标增强 */
+.star-icon-glow {
+  filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.star-icon-glow:hover {
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+}
+
+/* 菜品信息图标美化 */
+.info-icon-circle {
+  background: linear-gradient(135deg, currentColor 0%, currentColor 100%);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-icon-circle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.info-icon-circle:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+/* 特色亮点区域美化 */
+.features-highlight {
+  position: relative;
+}
+
+.features-highlight::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(59, 130, 246, 0.5), rgba(147, 51, 234, 0.5));
+  border-radius: 1px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dish-card-hover:hover .features-highlight::before {
+  opacity: 1;
+}
+
+/* 菜品详情页面专用样式 */
+.dish-detail-container {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgba(248, 250, 252, 0.8) 0%,
+    rgba(241, 245, 249, 0.9) 50%,
+    rgba(219, 234, 254, 0.3) 100%
+  );
+}
+
+/* 菜品详情头部导航 */
+.dish-detail-header {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 菜品标签渐变效果 */
+.dish-tag-gradient {
+  background: linear-gradient(135deg, currentColor 0%, currentColor 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.dish-tag-gradient::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.dish-tag-gradient:hover::after {
+  left: 100%;
+}
+
+/* 确保标签文字对比度 */
+.dish-tag-gradient {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 1);
+  font-weight: 700;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.dish-tag-gradient span {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+/* 用料清单项目动画 */
+.ingredient-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+}
+
+.ingredient-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 步骤卡片样式 */
+.step-card {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step-card:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(147, 51, 234, 0.08) 100%);
+  border-color: rgba(59, 130, 246, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.15);
+}
+
+/* 步骤序号圆圈 */
+.step-number {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  position: relative;
+}
+
+.step-number::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.step-card:hover .step-number::after {
+  opacity: 0.3;
+}
+
+/* 营养信息卡片 */
+.nutrition-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nutrition-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, currentColor 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nutrition-card:hover::before {
+  opacity: 1;
+}
+
+.nutrition-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* 提示卡片样式 */
+.tip-card {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.tip-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #f59e0b, #f97316);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+}
+
+.tip-card:hover::before {
+  transform: scaleY(1);
+}
+
+/* 警告提示区域 */
+.warning-section {
+  background: linear-gradient(
+    135deg,
+    rgba(251, 191, 36, 0.05) 0%,
+    rgba(245, 158, 11, 0.05) 50%,
+    rgba(239, 68, 68, 0.05) 100%
+  );
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.warning-item {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.warning-item:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateX(4px);
+}
+
+/* 连接线动画 */
+.step-connector {
+  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.step-card:hover + .step-connector,
+.step-card:hover .step-connector {
+  opacity: 1;
+}
+
+/* 收藏按钮特效 */
+.favorite-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.favorite-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+}
+
+.favorite-button:active::before {
+  width: 200px;
+  height: 200px;
+}
+
+/* 底部操作区域 */
+.bottom-actions {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(248, 250, 252, 0.8) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .dish-detail-header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .dish-detail-header .flex {
+    justify-content: center;
+  }
+
+  .step-card {
+    padding: 1rem;
+  }
+
+  .nutrition-card {
+    padding: 1rem;
+  }
+
+  .ingredient-item {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dish-tag-gradient {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .step-number {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.875rem;
+  }
+
+  .nutrition-card {
+    padding: 0.75rem;
+  }
+
+  .nutrition-card .text-2xl {
+    font-size: 1.5rem;
+  }
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  .dish-detail-container {
+    background: linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.8) 0%,
+      rgba(30, 41, 59, 0.9) 50%,
+      rgba(51, 65, 85, 0.3) 100%
+    );
+  }
+
+  .dish-detail-header {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(148, 163, 184, 0.2);
+  }
+
+  .step-card {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+
+  .nutrition-card {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(51, 65, 85, 0.7) 100%);
+  }
+
+  .ingredient-item {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+    border-color: rgba(34, 197, 94, 0.2);
+  }
+}
+
+/* 高对比度模式 */
+@media (prefers-contrast: high) {
+  .dish-tag-gradient {
+    border: 2px solid currentColor;
+  }
+
+  .step-card {
+    border: 2px solid rgba(59, 130, 246, 0.5);
+  }
+
+  .nutrition-card {
+    border: 2px solid rgba(148, 163, 184, 0.5);
+  }
+}
+
+/* 动画性能优化 */
+.step-card,
+.nutrition-card,
+.ingredient-item,
+.dish-tag-gradient {
+  will-change: transform;
+}
+
+/* Markdown 内容样式 */
+.markdown-content {
+  @apply text-apple-gray-700 leading-relaxed;
+}
+
+.markdown-content h1 {
+  @apply text-2xl font-bold text-apple-gray-900 mt-8 mb-4 pb-2 border-b border-apple-gray-200;
+}
+
+.markdown-content h2 {
+  @apply text-xl font-bold text-apple-gray-900 mt-6 mb-3;
+}
+
+.markdown-content h3 {
+  @apply text-lg font-semibold text-apple-gray-900 mt-5 mb-2;
+}
+
+.markdown-content h4 {
+  @apply text-base font-semibold text-apple-gray-900 mt-4 mb-2;
+}
+
+.markdown-content p {
+  @apply mb-4 leading-relaxed;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  @apply ml-6 mb-4 space-y-1;
+}
+
+.markdown-content ul {
+  @apply list-disc;
+}
+
+.markdown-content ol {
+  @apply list-decimal;
+}
+
+.markdown-content li {
+  @apply leading-relaxed;
+}
+
+.markdown-content blockquote {
+  @apply border-l-4 border-apple-blue/30 pl-4 py-2 my-4 bg-apple-blue/5 rounded-r-lg italic text-apple-gray-600;
+}
+
+.markdown-content code {
+  @apply bg-apple-gray-100 text-apple-gray-800 px-2 py-1 rounded text-sm font-mono;
+}
+
+.markdown-content pre {
+  @apply bg-apple-gray-900 text-apple-gray-100 p-4 rounded-lg overflow-x-auto my-4;
+}
+
+.markdown-content pre code {
+  @apply bg-transparent text-apple-gray-100 p-0;
+}
+
+.markdown-content table {
+  @apply w-full border-collapse border border-apple-gray-200 my-4;
+}
+
+.markdown-content th {
+  @apply bg-apple-gray-50 border border-apple-gray-200 px-4 py-2 text-left font-semibold text-apple-gray-900;
+}
+
+.markdown-content td {
+  @apply border border-apple-gray-200 px-4 py-2;
+}
+
+.markdown-content a {
+  @apply text-apple-blue hover:text-apple-blue-dark underline transition-colors duration-200;
+}
+
+.markdown-content strong {
+  @apply font-bold text-apple-gray-900;
+}
+
+.markdown-content em {
+  @apply italic;
+}
+
+.markdown-content hr {
+  @apply my-6 border-t border-apple-gray-200;
+}
+
+/* 菜品概览简约样式 - 与其他模块保持一致 */
+
+/* ========================================================================================
+   精致化样式增强 - 为优化后的页面提供支持
+   ======================================================================================== */
+
+/* 精致毛玻璃效果 - 高级版本 */
+.premium-glass {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* 精致卡片样式 */
+.card-elevated {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0) scale(1);
+  will-change: transform, box-shadow;
+}
+
+.card-elevated:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* 浮动动画优化 */
+@keyframes float-enhanced {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float-enhanced {
+  animation: float-enhanced 6s ease-in-out infinite;
+}
+
+/* 发光脉冲效果 */
+@keyframes pulse-glow-enhanced {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.8), 0 0 35px rgba(59, 130, 246, 0.4);
+  }
+}
+
+.animate-pulse-glow-enhanced {
+  animation: pulse-glow-enhanced 2s ease-in-out infinite;
+}
+
+/* 高级滚动条 */
+.scrollbar-enhanced::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-enhanced::-webkit-scrollbar-track {
+  background: rgba(148, 163, 184, 0.1);
+  border-radius: 4px;
+}
+
+.scrollbar-enhanced::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.6), rgba(147, 51, 234, 0.6));
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.scrollbar-enhanced::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(147, 51, 234, 0.8));
+}
+
+/* 渐变文字效果增强 */
+.text-gradient-enhanced {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #1e293b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* 按钮增强效果 */
+.btn-enhanced {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0) scale(1);
+}
+
+.btn-enhanced:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.btn-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-enhanced:hover::before {
+  left: 100%;
+}
+
+/* 标签云样式 */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.tag-item {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tag-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 选中状态增强 */
+.selected-enhanced {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+  border: 2px solid rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  position: relative;
+}
+
+.selected-enhanced::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+  border-radius: inherit;
+  z-index: -1;
+  animation: pulse-glow-enhanced 2s ease-in-out infinite;
+}
+
+/* 装饰性背景元素 */
+.bg-decoration {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bg-decoration-1 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(147, 51, 234, 0.05));
+  top: -100px;
+  right: -100px;
+}
+
+.bg-decoration-2 {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.05), rgba(251, 146, 60, 0.05));
+  bottom: -75px;
+  left: -75px;
+}
+
+/* 分隔线增强 */
+.divider-enhanced {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(59, 130, 246, 0.3) 25%,
+    rgba(147, 51, 234, 0.3) 75%,
+    transparent 100%
+  );
+  margin: 2rem 0;
+  border-radius: 1px;
+}
+
+/* 统计卡片样式 */
+.stats-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* 高级网格布局 */
+.grid-enhanced {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+@media (min-width: 768px) {
+  .grid-enhanced {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-enhanced {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+/* 内容淡入动画 */
+@keyframes content-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-fade-in {
+  animation: content-fade-in 0.8s ease-out forwards;
+}
+
+/* 页面过渡效果 */
+.page-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 高级阴影系统 */
+.shadow-enhanced {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+.shadow-enhanced-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+.shadow-enhanced-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .premium-glass {
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+  }
+
+  .card-elevated:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  .btn-enhanced:hover {
+    transform: translateY(-1px) scale(1.02);
+  }
+
+  .grid-enhanced {
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 减少动画偏好支持 */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-enhanced,
+  .animate-pulse-glow-enhanced,
+  .content-fade-in,
+  .card-elevated,
+  .btn-enhanced {
+    animation: none;
+    transition: none;
+  }
+
+  .card-elevated:hover,
+  .btn-enhanced:hover {
+    transform: none;
+  }
+}
+
+/* 确保样式完整性 */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.6;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+}
+

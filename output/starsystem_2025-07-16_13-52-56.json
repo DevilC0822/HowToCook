@@ -1,0 +1,777 @@
+{
+  "processedAt": "2025-07-16 13:54:42",
+  "directory": "/Users/const/code/study/HowToCook/starsystem",
+  "totalFiles": 6,
+  "processedFiles": 6,
+  "taskId": "starsystem_1752645176162",
+  "items": [
+    {
+      "title": "1 星难度菜品",
+      "starLevel": 1,
+      "dishes": [
+        {
+          "name": "吐司果酱",
+          "filePath": "./../dishes/breakfast/吐司果酱.md",
+          "category": "breakfast"
+        },
+        {
+          "name": "微波炉荷包蛋",
+          "filePath": "./../dishes/breakfast/微波炉荷包蛋.md",
+          "category": "breakfast"
+        },
+        {
+          "name": "微波炉蛋糕",
+          "filePath": "./../dishes/breakfast/微波炉蛋糕.md",
+          "category": "breakfast"
+        },
+        {
+          "name": "牛奶燕麦",
+          "filePath": "./../dishes/breakfast/牛奶燕麦.md",
+          "category": "breakfast"
+        },
+        {
+          "name": "空气炸锅面包片",
+          "filePath": "./../dishes/breakfast/空气炸锅面包片.md",
+          "category": "breakfast"
+        },
+        {
+          "name": "金枪鱼酱三明治",
+          "filePath": "./../dishes/breakfast/金枪鱼酱三明治.md",
+          "category": "breakfast"
+        },
+        {
+          "name": "蔗糖糖浆",
+          "filePath": "./../dishes/condiment/蔗糖糖浆/蔗糖糖浆.md",
+          "category": "condiment"
+        },
+        {
+          "name": "奇异果菠菜特调",
+          "filePath": "./../dishes/drink/奇异果菠菜特调/奇异果菠菜特调.md",
+          "category": "drink"
+        },
+        {
+          "name": "柠檬水",
+          "filePath": "./../dishes/drink/柠檬水/柠檬水.md",
+          "category": "drink"
+        },
+        {
+          "name": "砂糖椰子冰沙",
+          "filePath": "./../dishes/drink/砂糖椰子冰沙/砂糖椰子冰沙.md",
+          "category": "drink"
+        },
+        {
+          "name": "酸梅汤（半成品加工）",
+          "filePath": "./../dishes/drink/酸梅汤（半成品加工）.md",
+          "category": "drink"
+        },
+        {
+          "name": "黔式腊肠娃娃菜",
+          "filePath": "./../dishes/meat_dish/黔式腊肠娃娃菜/黔式腊肠娃娃菜.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "半成品意面",
+          "filePath": "./../dishes/semi-finished/半成品意面.md",
+          "category": "semi-finished"
+        },
+        {
+          "name": "速冻水饺",
+          "filePath": "./../dishes/semi-finished/速冻水饺.md",
+          "category": "semi-finished"
+        },
+        {
+          "name": "速冻汤圆",
+          "filePath": "./../dishes/semi-finished/速冻汤圆/速冻汤圆.md",
+          "category": "semi-finished"
+        },
+        {
+          "name": "奶油蘑菇汤",
+          "filePath": "./../dishes/soup/奶油蘑菇汤.md",
+          "category": "soup"
+        },
+        {
+          "name": "朱雀汤",
+          "filePath": "./../dishes/soup/朱雀汤/朱雀汤.md",
+          "category": "soup"
+        },
+        {
+          "name": "意式肉酱面",
+          "filePath": "./../dishes/staple/意式肉酱面/意式肉酱面.md",
+          "category": "staple"
+        },
+        {
+          "name": "煮泡面加蛋",
+          "filePath": "./../dishes/staple/煮泡面加蛋.md",
+          "category": "staple"
+        },
+        {
+          "name": "电饭煲蒸米饭",
+          "filePath": "./../dishes/staple/米饭/电饭煲蒸米饭.md",
+          "category": "staple"
+        },
+        {
+          "name": "老干妈拌面",
+          "filePath": "./../dishes/staple/老干妈拌面.md",
+          "category": "staple"
+        },
+        {
+          "name": "螺蛳粉",
+          "filePath": "./../dishes/staple/螺蛳粉.md",
+          "category": "staple"
+        },
+        {
+          "name": "麻油拌面",
+          "filePath": "./../dishes/staple/麻油拌面.md",
+          "category": "staple"
+        },
+        {
+          "name": "凉拌油麦菜",
+          "filePath": "./../dishes/vegetable_dish/凉拌油麦菜.md",
+          "category": "vegetable_dish"
+        },
+        {
+          "name": "凉拌黄瓜",
+          "filePath": "./../dishes/vegetable_dish/凉拌黄瓜.md",
+          "category": "vegetable_dish"
+        },
+        {
+          "name": "清蒸南瓜",
+          "filePath": "./../dishes/vegetable_dish/清蒸南瓜.md",
+          "category": "vegetable_dish"
+        },
+        {
+          "name": "炒滑蛋",
+          "filePath": "./../dishes/vegetable_dish/炒滑蛋/炒滑蛋.md",
+          "category": "vegetable_dish"
+        }
+      ],
+      "difficultyDescription": "极简易，适合厨房新手或快速餐点需求。",
+      "recommendedFor": [
+        "厨房新手",
+        "学生党",
+        "上班族",
+        "追求效率者",
+        "独居人士"
+      ],
+      "tags": [
+        "入门级",
+        "快手菜",
+        "早餐",
+        "简餐",
+        "饮品",
+        "半成品",
+        "新手友好",
+        "微波炉",
+        "空气炸锅",
+        "电饭煲",
+        "懒人食谱"
+      ],
+      "filePath": "1Star.md",
+      "originalContent": "# 1 星难度菜品\n\n* [吐司果酱](./../dishes/breakfast/吐司果酱.md)\n* [微波炉荷包蛋](./../dishes/breakfast/微波炉荷包蛋.md)\n* [微波炉蛋糕](./../dishes/breakfast/微波炉蛋糕.md)\n* [牛奶燕麦](./../dishes/breakfast/牛奶燕麦.md)\n* [空气炸锅面包片](./../dishes/breakfast/空气炸锅面包片.md)\n* [金枪鱼酱三明治](./../dishes/breakfast/金枪鱼酱三明治.md)\n* [蔗糖糖浆](./../dishes/condiment/蔗糖糖浆/蔗糖糖浆.md)\n* [奇异果菠菜特调](./../dishes/drink/奇异果菠菜特调/奇异果菠菜特调.md)\n* [柠檬水](./../dishes/drink/柠檬水/柠檬水.md)\n* [砂糖椰子冰沙](./../dishes/drink/砂糖椰子冰沙/砂糖椰子冰沙.md)\n* [酸梅汤（半成品加工）](./../dishes/drink/酸梅汤（半成品加工）.md)\n* [黔式腊肠娃娃菜](./../dishes/meat_dish/黔式腊肠娃娃菜/黔式腊肠娃娃菜.md)\n* [半成品意面](./../dishes/semi-finished/半成品意面.md)\n* [速冻水饺](./../dishes/semi-finished/速冻水饺.md)\n* [速冻汤圆](./../dishes/semi-finished/速冻汤圆/速冻汤圆.md)\n* [奶油蘑菇汤](./../dishes/soup/奶油蘑菇汤.md)\n* [朱雀汤](./../dishes/soup/朱雀汤/朱雀汤.md)\n* [意式肉酱面](./../dishes/staple/意式肉酱面/意式肉酱面.md)\n* [煮泡面加蛋](./../dishes/staple/煮泡面加蛋.md)\n* [电饭煲蒸米饭](./../dishes/staple/米饭/电饭煲蒸米饭.md)\n* [老干妈拌面](./../dishes/staple/老干妈拌面.md)\n* [螺蛳粉](./../dishes/staple/螺蛳粉.md)\n* [麻油拌面](./../dishes/staple/麻油拌面.md)\n* [凉拌油麦菜](./../dishes/vegetable_dish/凉拌油麦菜.md)\n* [凉拌黄瓜](./../dishes/vegetable_dish/凉拌黄瓜.md)\n* [清蒸南瓜](./../dishes/vegetable_dish/清蒸南瓜.md)\n* [炒滑蛋](./../dishes/vegetable_dish/炒滑蛋/炒滑蛋.md)",
+      "processedAt": "2025-07-16 13:53:08"
+    },
+    {
+      "title": "2 星难度菜品",
+      "starLevel": 2,
+      "dishes": [],
+      "difficultyDescription": "解析失败，请手动处理",
+      "recommendedFor": [
+        "所有人"
+      ],
+      "tags": [
+        "解析失败"
+      ],
+      "filePath": "2Star.md",
+      "originalContent": "# 2 星难度菜品\n\n* [白灼虾](./../dishes/aquatic/白灼虾/白灼虾.md)\n* [蒜蓉虾](./../dishes/aquatic/蒜蓉虾/蒜蓉虾.md)\n* [蒜香黄油虾](./../dishes/aquatic/蒜香黄油虾/蒜香黄油虾.md)\n* [太阳蛋](./../dishes/breakfast/太阳蛋.md)\n* [手抓饼](./../dishes/breakfast/手抓饼.md)\n* [桂圆红枣粥](./../dishes/breakfast/桂圆红枣粥.md)\n* [水煮玉米](./../dishes/breakfast/水煮玉米.md)\n* [煎饺](./../dishes/breakfast/煎饺.md)\n* [燕麦鸡蛋饼](./../dishes/breakfast/燕麦鸡蛋饼.md)\n* [美式炒蛋](./../dishes/breakfast/美式炒蛋.md)\n* [蒸水蛋](./../dishes/breakfast/蒸水蛋.md)\n* [蒸花卷](./../dishes/breakfast/蒸花卷.md)\n* [蛋煎糍粑](./../dishes/breakfast/蛋煎糍粑.md)\n* [鸡蛋三明治](./../dishes/breakfast/鸡蛋三明治.md)\n* [油酥](./../dishes/condiment/油酥.md)\n* [炸串酱料](./../dishes/condiment/炸串酱料.md)\n* [糖醋汁](./../dishes/condiment/糖醋汁.md)\n* [草莓酱](./../dishes/condiment/草莓酱/草莓酱.md)\n* [蒜香酱油](./../dishes/condiment/蒜香酱油.md)\n* [烤箱版巴斯克芝士蛋糕](./../dishes/dessert/烤箱版巴斯克芝士蛋糕/烤箱版巴斯克芝士蛋糕.md)\n* [草莓冰淇淋](./../dishes/dessert/草莓冰淇淋/草莓冰淇淋.md)\n* [龟苓膏](./../dishes/dessert/龟苓膏/龟苓膏.md)\n* [冬瓜茶](./../dishes/drink/冬瓜茶.md)\n* [冰粉](./../dishes/drink/冰粉/冰粉.md)\n* [可乐桶](./../dishes/drink/可乐桶.md)\n* [奶茶](./../dishes/drink/奶茶.md)\n* [杨枝甘露](./../dishes/drink/杨枝甘露.md)\n* [耙耙柑茶](./../dishes/drink/耙耙柑茶/耙耙柑茶.md)\n* [金汤力](./../dishes/drink/金汤力/金汤力.md)\n* [金菲士](./../dishes/drink/金菲士/金菲士.md)\n* [长岛冰茶](./../dishes/drink/长岛冰茶.md)\n* [荷兰豆炒腊肠](./../dishes/meat_dish/荷兰豆炒腊肠/荷兰豆炒腊肠.md)\n* [蒜苔炒肉末](./../dishes/meat_dish/蒜苔炒肉末.md)\n* [豆豉鲮鱼油麦菜](./../dishes/meat_dish/豆豉鲮鱼油麦菜/豆豉鲮鱼油麦菜.md)\n* [炸薯条](./../dishes/semi-finished/炸薯条/炸薯条.md)\n* [空气炸锅鸡翅中](./../dishes/semi-finished/空气炸锅鸡翅中/空气炸锅鸡翅中.md)\n* [速冻馄饨](./../dishes/semi-finished/速冻馄饨.md)\n* [小米粥](./../dishes/soup/小米粥.md)\n* [米粥](./../dishes/soup/米粥.md)\n* [紫菜蛋花汤](./../dishes/soup/紫菜蛋花汤.md)\n* [西红柿鸡蛋汤](./../dishes/soup/西红柿鸡蛋汤.md)\n* [金针菇汤](./../dishes/soup/金针菇汤.md)\n* [微波炉腊肠煲仔饭](./../dishes/staple/微波炉腊肠煲仔饭/微波炉腊肠煲仔饭.md)\n* [汤面](./../dishes/staple/汤面.md)\n* [炒方便面](./../dishes/staple/炒方便面.md)\n* [电饭煲三文鱼炊饭](./../dishes/staple/电饭煲三文鱼炊饭/电饭煲三文鱼炊饭.md)\n* [煮锅蒸米饭](./../dishes/staple/米饭/煮锅蒸米饭.md)\n* [葱油拌面](./../dishes/staple/葱油拌面.md)\n* [西红柿鸡蛋挂面](./../dishes/staple/西红柿鸡蛋挂面/西红柿鸡蛋挂面.md)\n* [酱拌荞麦面](./../dishes/staple/酱拌荞麦面/酱拌荞麦面.md)\n* [酸辣蕨根粉](./../dishes/staple/酸辣蕨根粉.md)\n* [醪糟小汤圆](./../dishes/staple/醪糟小汤圆.md)\n* [陕西油泼面](./../dishes/staple/陕西油泼面/陕西油泼面.md)\n* [鲣鱼海苔玉米饭](./../dishes/staple/鲣鱼海苔玉米饭/鲣鱼海苔玉米饭.md)\n* [麻辣减脂荞麦面](./../dishes/staple/麻辣减脂荞麦面.md)\n* [凉拌木耳](./../dishes/vegetable_dish/凉拌木耳/凉拌木耳.md)\n* [凉拌莴笋](./../dishes/vegetable_dish/凉拌莴笋/凉拌莴笋.md)\n* [凉拌豆腐](./../dishes/vegetable_dish/凉拌豆腐.md)\n* [凉拌金针菇](./../dishes/vegetable_dish/凉拌金针菇.md)\n* [松仁玉米](./../dishes/vegetable_dish/松仁玉米.md)\n* [水油焖蔬菜](./../dishes/vegetable_dish/水油焖蔬菜.md)\n* [油醋爆蛋](./../dishes/vegetable_dish/油醋爆蛋.md)\n* [洋葱炒鸡蛋](./../dishes/vegetable_dish/洋葱炒鸡蛋/洋葱炒鸡蛋.md)\n* [清炒花菜](./../dishes/vegetable_dish/清炒花菜.md)\n* [炒青菜](./../dishes/vegetable_dish/炒青菜.md)\n* [白灼菜心](./../dishes/vegetable_dish/白灼菜心/白灼菜心.md)\n* [糖拌西红柿](./../dishes/vegetable_dish/糖拌西红柿/糖拌西红柿.md)\n* [素炒豆角](./../dishes/vegetable_dish/素炒豆角.md)\n* [芹菜拌茶树菇](./../dishes/vegetable_dish/芹菜拌茶树菇/芹菜拌茶树菇.md)\n* [莴笋叶煎饼](./../dishes/vegetable_dish/莴笋叶煎饼/莴笋叶煎饼.md)\n* [菠菜炒鸡蛋](./../dishes/vegetable_dish/菠菜炒鸡蛋/菠菜炒鸡蛋.md)\n* [蒜蓉空心菜](./../dishes/vegetable_dish/蒜蓉空心菜/蒜蓉空心菜.md)\n* [蒜蓉西兰花](./../dishes/vegetable_dish/蒜蓉西兰花.md)\n* [蚝油生菜](./../dishes/vegetable_dish/蚝油生菜.md)\n* [西红柿炒鸡蛋](./../dishes/vegetable_dish/西红柿炒鸡蛋.md)\n* [西红柿豆腐汤羹](./../dishes/vegetable_dish/西红柿豆腐汤羹/西红柿豆腐汤羹.md)\n* [西葫芦炒鸡蛋](./../dishes/vegetable_dish/西葫芦炒鸡蛋/西葫芦炒鸡蛋.md)\n* [话梅煮毛豆](./../dishes/vegetable_dish/话梅煮毛豆/话梅煮毛豆.md)\n* [酸辣土豆丝](./../dishes/vegetable_dish/酸辣土豆丝.md)\n* [金针菇日本豆腐煲](./../dishes/vegetable_dish/金针菇日本豆腐煲.md)\n* [陕北熬豆角](./../dishes/vegetable_dish/陕北熬豆角.md)\n* [雷椒皮蛋](./../dishes/vegetable_dish/雷椒皮蛋.md)\n* [鸡蛋火腿炒黄瓜](./../dishes/vegetable_dish/鸡蛋火腿炒黄瓜.md)\n* [微波炉鸡蛋羹](./../dishes/vegetable_dish/鸡蛋羹/微波炉鸡蛋羹.md)\n* [鸡蛋羹](./../dishes/vegetable_dish/鸡蛋羹/鸡蛋羹.md)",
+      "processedAt": "2025-07-16 13:53:33"
+    },
+    {
+      "title": "3 星难度菜品",
+      "starLevel": 3,
+      "dishes": [],
+      "difficultyDescription": "解析失败，请手动处理",
+      "recommendedFor": [
+        "所有人"
+      ],
+      "tags": [
+        "解析失败"
+      ],
+      "filePath": "3Star.md",
+      "originalContent": "# 3 星难度菜品\n\n* [干煎阿根廷红虾](./../dishes/aquatic/干煎阿根廷红虾/干煎阿根廷红虾.md)\n* [微波葱姜黑鳕鱼](./../dishes/aquatic/微波葱姜黑鳕鱼.md)\n* [清蒸生蚝](./../dishes/aquatic/清蒸生蚝.md)\n* [清蒸鲈鱼](./../dishes/aquatic/清蒸鲈鱼/清蒸鲈鱼.md)\n* [芥末黄油罗氏虾](./../dishes/aquatic/芥末黄油罗氏虾/芥末黄油罗氏虾.md)\n* [葱烧海参](./../dishes/aquatic/葱烧海参/葱烧海参.md)\n* [蛏抱蛋](./../dishes/aquatic/蛏抱蛋/蛏抱蛋.md)\n* [鲤鱼炖白菜](./../dishes/aquatic/鲤鱼炖白菜/鲤鱼炖白菜.md)\n* [鳊鱼炖豆腐](./../dishes/aquatic/鳊鱼炖豆腐/鳊鱼炖豆腐.md)\n* [黄油煎虾](./../dishes/aquatic/黄油煎虾/黄油煎虾.md)\n* [温泉蛋](./../dishes/breakfast/温泉蛋/温泉蛋.md)\n* [溏心蛋](./../dishes/breakfast/溏心蛋.md)\n* [苏格兰蛋](./../dishes/breakfast/苏格兰蛋/苏格兰蛋.md)\n* [茶叶蛋](./../dishes/breakfast/茶叶蛋.md)\n* [油泼辣子](./../dishes/condiment/油泼辣子/油泼辣子.md)\n* [葱油](./../dishes/condiment/葱油.md)\n* [反沙芋头](./../dishes/dessert/反沙芋头/反沙芋头.md)\n* [奥利奥冰淇淋](./../dishes/dessert/奥利奥冰淇淋/奥利奥冰淇淋.md)\n* [炸鲜奶](./../dishes/dessert/炸鲜奶/炸鲜奶.md)\n* [玛格丽特饼干](./../dishes/dessert/玛格丽特饼干/玛格丽特饼干.md)\n* [红柚蛋糕](./../dishes/dessert/红柚蛋糕/红柚蛋糕.md)\n* [英式司康](./../dishes/dessert/英式司康/英式司康.md)\n* [雪花酥](./../dishes/dessert/雪花酥/雪花酥.md)\n* [B52轰炸机](./../dishes/drink/B52轰炸机.md)\n* [Mojito莫吉托](./../dishes/drink/Mojito莫吉托.md)\n* [泰国手标红茶](./../dishes/drink/泰国手标红茶/泰国手标红茶.md)\n* [海边落日](./../dishes/drink/海边落日/海边落日.md)\n* [百香果橙子特调](./../dishes/drink/百香果橙子特调/百香果橙子特调.md)\n* [菠萝咖啡特调](./../dishes/drink/菠萝咖啡特调/菠萝咖啡特调.md)\n* [农家一碗香](./../dishes/meat_dish/农家一碗香/农家一碗香.md)\n* [凉拌鸡丝](./../dishes/meat_dish/凉拌鸡丝/凉拌鸡丝.md)\n* [卤菜](./../dishes/meat_dish/卤菜/卤菜.md)\n* [口水鸡](./../dishes/meat_dish/口水鸡/口水鸡.md)\n* [可乐鸡翅](./../dishes/meat_dish/可乐鸡翅.md)\n* [土豆炖排骨](./../dishes/meat_dish/土豆炖排骨/土豆炖排骨.md)\n* [奶酪培根通心粉](./../dishes/meat_dish/奶酪培根通心粉/奶酪培根通心粉.md)\n* [姜炒鸡](./../dishes/meat_dish/姜炒鸡/姜炒鸡.md)\n* [姜葱捞鸡](./../dishes/meat_dish/姜葱捞鸡/姜葱捞鸡.md)\n* [孜然牛肉](./../dishes/meat_dish/孜然牛肉.md)\n* [小炒肉](./../dishes/meat_dish/小炒肉.md)\n* [小炒鸡肝](./../dishes/meat_dish/小炒鸡肝/小炒鸡肝.md)\n* [小米辣炒肉](./../dishes/meat_dish/小米辣炒肉.md)\n* [小酥肉](./../dishes/meat_dish/小酥肉.md)\n* [尖椒炒牛肉](./../dishes/meat_dish/尖椒炒牛肉.md)\n* [意式烤鸡](./../dishes/meat_dish/意式烤鸡.md)\n* [水煮牛肉](./../dishes/meat_dish/水煮牛肉/水煮牛肉.md)\n* [洋葱炒猪肉](./../dishes/meat_dish/洋葱炒猪肉.md)\n* [清蒸鳜鱼](./../dishes/meat_dish/清蒸鳜鱼/清蒸鳜鱼.md)\n* [湖南家常红烧肉](./../dishes/meat_dish/湖南家常红烧肉/湖南家常红烧肉.md)\n* [烤鸡翅](./../dishes/meat_dish/烤鸡翅.md)\n* [甜辣烤全翅](./../dishes/meat_dish/甜辣烤全翅.md)\n* [瘦肉土豆片](./../dishes/meat_dish/瘦肉土豆片/瘦肉土豆片.md)\n* [白菜猪肉炖粉条](./../dishes/meat_dish/白菜猪肉炖粉条.md)\n* [简易红烧肉](./../dishes/meat_dish/红烧肉/简易红烧肉.md)\n* [肉饼炖蛋](./../dishes/meat_dish/肉饼炖蛋.md)\n* [芥末罗氏虾](./../dishes/meat_dish/芥末罗氏虾/芥末罗氏虾.md)\n* [茭白炒肉](./../dishes/meat_dish/茭白炒肉/茭白炒肉.md)\n* [蚂蚁上树](./../dishes/meat_dish/蚂蚁上树.md)\n* [豉汁蒸白鱔食谱](./../dishes/meat_dish/豉汁蒸白鱔/豉汁蒸白鱔食谱.md)\n* [辣椒炒肉](./../dishes/meat_dish/辣椒炒肉.md)\n* [青椒土豆炒肉](./../dishes/meat_dish/青椒土豆炒肉/青椒土豆炒肉.md)\n* [香干肉丝](./../dishes/meat_dish/香干肉丝.md)\n* [香干芹菜炒肉](./../dishes/meat_dish/香干芹菜炒肉/香干芹菜炒肉.md)\n* [香煎五花肉](./../dishes/meat_dish/香煎五花肉/香煎五花肉.md)\n* [香菇滑鸡](./../dishes/meat_dish/香菇滑鸡/香菇滑鸡.md)\n* [鱼香茄子](./../dishes/meat_dish/鱼香茄子/鱼香茄子.md)\n* [麻婆豆腐](./../dishes/meat_dish/麻婆豆腐/麻婆豆腐.md)\n* [麻辣香锅](./../dishes/meat_dish/麻辣香锅.md)\n* [黄焖鸡](./../dishes/meat_dish/黄焖鸡.md)\n* [黄瓜炒肉](./../dishes/meat_dish/黄瓜炒肉.md)\n* [凉皮](./../dishes/semi-finished/凉皮.md)\n* [懒人蛋挞](./../dishes/semi-finished/懒人蛋挞/懒人蛋挞.md)\n* [空气炸锅羊排](./../dishes/semi-finished/空气炸锅羊排/空气炸锅羊排.md)\n* [勾芡香菇汤](./../dishes/soup/勾芡香菇汤/勾芡香菇汤.md)\n* [昂刺鱼豆腐汤](./../dishes/soup/昂刺鱼豆腐汤/昂刺鱼豆腐汤.md)\n* [玉米排骨汤](./../dishes/soup/玉米排骨汤/玉米排骨汤.md)\n* [番茄牛肉蛋花汤](./../dishes/soup/番茄牛肉蛋花汤.md)\n* [皮蛋瘦肉粥](./../dishes/soup/皮蛋瘦肉粥.md)\n* [羊肉汤](./../dishes/soup/羊肉汤/羊肉汤.md)\n* [陈皮排骨汤](./../dishes/soup/陈皮排骨汤/陈皮排骨汤.md)\n* [凉粉](./../dishes/staple/凉粉/凉粉.md)\n* [炒凉粉](./../dishes/staple/炒凉粉/炒凉粉.md)\n* [炒年糕](./../dishes/staple/炒年糕.md)\n* [炒意大利面](./../dishes/staple/炒意大利面/炒意大利面.md)\n* [炒馍](./../dishes/staple/炒馍.md)\n* [炸酱面](./../dishes/staple/炸酱面.md)\n* [芝麻烧饼](./../dishes/staple/烧饼/芝麻烧饼.md)\n* [热干面](./../dishes/staple/热干面.md)\n* [老友猪肉粉](./../dishes/staple/老友猪肉粉/老友猪肉粉.md)\n* [肉蛋盖饭](./../dishes/staple/肉蛋盖饭.md)\n* [茄子肉煎饼](./../dishes/staple/茄子肉煎饼/茄子肉煎饼.md)\n* [蛋包饭](./../dishes/staple/蛋包饭.md)\n* [蛋炒饭](./../dishes/staple/蛋炒饭.md)\n* [豆角焖面](./../dishes/staple/豆角焖面/豆角焖面.md)\n* [韩式拌饭](./../dishes/staple/韩式拌饭/韩式拌饭.md)\n* [韭菜盒子](./../dishes/staple/韭菜盒子.md)\n* [上汤娃娃菜](./../dishes/vegetable_dish/上汤娃娃菜/上汤娃娃菜.md)\n* [包菜炒鸡蛋粉丝](./../dishes/vegetable_dish/包菜炒鸡蛋粉丝/包菜炒鸡蛋粉丝.md)\n* [地三鲜](./../dishes/vegetable_dish/地三鲜.md)\n* [小炒藕丁](./../dishes/vegetable_dish/小炒藕丁/小炒藕丁.md)\n* [干锅花菜](./../dishes/vegetable_dish/干锅花菜/干锅花菜.md)\n* [手撕包菜](./../dishes/vegetable_dish/手撕包菜/手撕包菜.md)\n* [拔丝土豆](./../dishes/vegetable_dish/拔丝土豆/拔丝土豆.md)\n* [椒盐玉米](./../dishes/vegetable_dish/椒盐玉米/椒盐玉米.md)\n* [榄菜肉末四季豆](./../dishes/vegetable_dish/榄菜肉末四季豆/榄菜肉末四季豆.md)\n* [炒茄子](./../dishes/vegetable_dish/炒茄子.md)\n* [烤茄子](./../dishes/vegetable_dish/烤茄子/烤茄子.md)\n* [红烧冬瓜](./../dishes/vegetable_dish/红烧冬瓜/红烧冬瓜.md)\n* [脆皮豆腐](./../dishes/vegetable_dish/脆皮豆腐.md)\n* [茄子炖土豆](./../dishes/vegetable_dish/茄子炖土豆.md)\n* [葱煎豆腐](./../dishes/vegetable_dish/葱煎豆腐.md)\n* [蒲烧茄子](./../dishes/vegetable_dish/蒲烧茄子.md)\n* [虎皮青椒](./../dishes/vegetable_dish/虎皮青椒/虎皮青椒.md)\n* [蚝油三鲜菇](./../dishes/vegetable_dish/蚝油三鲜菇/蚝油三鲜菇.md)\n* [蒸箱鸡蛋羹](./../dishes/vegetable_dish/鸡蛋羹/蒸箱鸡蛋羹.md)",
+      "processedAt": "2025-07-16 13:53:58"
+    },
+    {
+      "title": "4 星难度菜品",
+      "starLevel": 4,
+      "dishes": [
+        {
+          "name": "咖喱炒蟹",
+          "filePath": "./../dishes/aquatic/咖喱炒蟹.md",
+          "category": "aquatic"
+        },
+        {
+          "name": "小龙虾",
+          "filePath": "./../dishes/aquatic/小龙虾/小龙虾.md",
+          "category": "aquatic"
+        },
+        {
+          "name": "水煮鱼",
+          "filePath": "./../dishes/aquatic/水煮鱼.md",
+          "category": "aquatic"
+        },
+        {
+          "name": "油焖大虾",
+          "filePath": "./../dishes/aquatic/油焖大虾/油焖大虾.md",
+          "category": "aquatic"
+        },
+        {
+          "name": "烤鱼",
+          "filePath": "./../dishes/aquatic/混合烤鱼/烤鱼.md",
+          "category": "aquatic"
+        },
+        {
+          "name": "糖醋鲤鱼",
+          "filePath": "./../dishes/aquatic/糖醋鲤鱼/糖醋鲤鱼.md",
+          "category": "aquatic"
+        },
+        {
+          "name": "红烧鱼",
+          "filePath": "./../dishes/aquatic/红烧鱼.md",
+          "category": "aquatic"
+        },
+        {
+          "name": "红烧鱼头",
+          "filePath": "./../dishes/aquatic/红烧鱼头.md",
+          "category": "aquatic"
+        },
+        {
+          "name": "红烧鲤鱼",
+          "filePath": "./../dishes/aquatic/红烧鲤鱼.md",
+          "category": "aquatic"
+        },
+        {
+          "name": "葱油桂鱼",
+          "filePath": "./../dishes/aquatic/葱油桂鱼/葱油桂鱼.md",
+          "category": "aquatic"
+        },
+        {
+          "name": "香煎翘嘴鱼",
+          "filePath": "./../dishes/aquatic/香煎翘嘴鱼/香煎翘嘴鱼.md",
+          "category": "aquatic"
+        },
+        {
+          "name": "简易版炒糖色",
+          "filePath": "./../dishes/condiment/简易版炒糖色.md",
+          "category": "condiment"
+        },
+        {
+          "name": "咖啡椰奶冻",
+          "filePath": "./../dishes/dessert/咖啡椰奶冻/咖啡椰奶冻.md",
+          "category": "dessert"
+        },
+        {
+          "name": "提拉米苏",
+          "filePath": "./../dishes/dessert/提拉米苏/提拉米苏.md",
+          "category": "dessert"
+        },
+        {
+          "name": "烤蛋挞",
+          "filePath": "./../dishes/dessert/烤蛋挞/烤蛋挞.md",
+          "category": "dessert"
+        },
+        {
+          "name": "酸奶意式奶冻",
+          "filePath": "./../dishes/dessert/酸奶意式奶冻/酸奶意式奶冻.md",
+          "category": "dessert"
+        },
+        {
+          "name": "魔芋蛋糕",
+          "filePath": "./../dishes/dessert/魔芋蛋糕/魔芋蛋糕.md",
+          "category": "dessert"
+        },
+        {
+          "name": "酒酿醪糟",
+          "filePath": "./../dishes/drink/酒酿醪糟/酒酿醪糟.md",
+          "category": "drink"
+        },
+        {
+          "name": "酸梅汤",
+          "filePath": "./../dishes/drink/酸梅汤/酸梅汤.md",
+          "category": "drink"
+        },
+        {
+          "name": "乡村啤酒鸭",
+          "filePath": "./../dishes/meat_dish/乡村啤酒鸭.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "冬瓜酿肉",
+          "filePath": "./../dishes/meat_dish/冬瓜酿肉/冬瓜酿肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "冷吃兔",
+          "filePath": "./../dishes/meat_dish/冷吃兔.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "咕噜肉",
+          "filePath": "./../dishes/meat_dish/咕噜肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "咖喱肥牛",
+          "filePath": "./../dishes/meat_dish/咖喱肥牛/咖喱肥牛.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "啤酒鸭",
+          "filePath": "./../dishes/meat_dish/啤酒鸭/啤酒鸭.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "回锅肉",
+          "filePath": "./../dishes/meat_dish/回锅肉/回锅肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "宫保鸡丁",
+          "filePath": "./../dishes/meat_dish/宫保鸡丁/宫保鸡丁.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "小炒黄牛肉",
+          "filePath": "./../dishes/meat_dish/小炒黄牛肉/小炒黄牛肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "尖叫牛蛙",
+          "filePath": "./../dishes/meat_dish/尖叫牛蛙/尖叫牛蛙.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "山西过油肉",
+          "filePath": "./../dishes/meat_dish/山西过油肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "干煸仔鸡",
+          "filePath": "./../dishes/meat_dish/干煸仔鸡/干煸仔鸡.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "广式萝卜牛腩",
+          "filePath": "./../dishes/meat_dish/广式萝卜牛腩/广式萝卜牛腩.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "徽派红烧肉",
+          "filePath": "./../dishes/meat_dish/徽派红烧肉/徽派红烧肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "新疆大盘鸡",
+          "filePath": "./../dishes/meat_dish/新疆大盘鸡/新疆大盘鸡.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "杀猪菜",
+          "filePath": "./../dishes/meat_dish/杀猪菜.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "柱候牛腩",
+          "filePath": "./../dishes/meat_dish/柱候牛腩/柱候牛腩.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "梅菜扣肉",
+          "filePath": "./../dishes/meat_dish/梅菜扣肉/梅菜扣肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "椒盐排条",
+          "filePath": "./../dishes/meat_dish/椒盐排条.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "湘祁米夫鸭",
+          "filePath": "./../dishes/meat_dish/湘祁米夫鸭/湘祁米夫鸭.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "牛排",
+          "filePath": "./../dishes/meat_dish/牛排/牛排.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "番茄红酱",
+          "filePath": "./../dishes/meat_dish/番茄红酱.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "粉蒸肉",
+          "filePath": "./../dishes/meat_dish/粉蒸肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "糖醋排骨",
+          "filePath": "./../dishes/meat_dish/糖醋排骨/糖醋排骨.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "糖醋里脊",
+          "filePath": "./../dishes/meat_dish/糖醋里脊.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "红烧猪蹄",
+          "filePath": "./../dishes/meat_dish/红烧猪蹄/红烧猪蹄.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "南派红烧肉",
+          "filePath": "./../dishes/meat_dish/红烧肉/南派红烧肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "羊排焖面",
+          "filePath": "./../dishes/meat_dish/羊排焖面/羊排焖面.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "老妈蹄花",
+          "filePath": "./../dishes/meat_dish/老妈蹄花/老妈蹄花.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "老式锅包肉",
+          "filePath": "./../dishes/meat_dish/老式锅包肉/老式锅包肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "荔枝肉",
+          "filePath": "./../dishes/meat_dish/荔枝肉/荔枝肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "萝卜炖羊排",
+          "filePath": "./../dishes/meat_dish/萝卜炖羊排.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "西红柿土豆炖牛肉",
+          "filePath": "./../dishes/meat_dish/西红柿土豆炖牛肉/西红柿土豆炖牛肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "贵州辣子鸡",
+          "filePath": "./../dishes/meat_dish/贵州辣子鸡/贵州辣子鸡.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "酱排骨",
+          "filePath": "./../dishes/meat_dish/酱排骨/酱排骨.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "醉排骨",
+          "filePath": "./../dishes/meat_dish/醉排骨/醉排骨.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "香辣鸡爪煲",
+          "filePath": "./../dishes/meat_dish/香辣鸡爪煲/香辣鸡爪煲.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "鱼香肉丝",
+          "filePath": "./../dishes/meat_dish/鱼香肉丝.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "黑椒牛柳",
+          "filePath": "./../dishes/meat_dish/黑椒牛柳/黑椒牛柳.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "排骨苦瓜汤",
+          "filePath": "./../dishes/soup/排骨苦瓜汤/排骨苦瓜汤.md",
+          "category": "soup"
+        },
+        {
+          "name": "生汆丸子汤",
+          "filePath": "./../dishes/soup/生汆丸子汤.md",
+          "category": "soup"
+        },
+        {
+          "name": "罗宋汤",
+          "filePath": "./../dishes/soup/罗宋汤.md",
+          "category": "soup"
+        },
+        {
+          "name": "腊八粥",
+          "filePath": "./../dishes/soup/腊八粥.md",
+          "category": "soup"
+        },
+        {
+          "name": "菌菇炖乳鸽",
+          "filePath": "./../dishes/soup/菌菇炖乳鸽/菌菇炖乳鸽.md",
+          "category": "soup"
+        },
+        {
+          "name": "银耳莲子粥",
+          "filePath": "./../dishes/soup/银耳莲子粥/银耳莲子粥.md",
+          "category": "soup"
+        },
+        {
+          "name": "陈皮排骨汤",
+          "filePath": "./../dishes/soup/陈皮排骨汤.md",
+          "category": "soup"
+        },
+        {
+          "name": "中式馅饼",
+          "filePath": "./../dishes/staple/中式馅饼/中式馅饼.md",
+          "category": "staple"
+        },
+        {
+          "name": "扬州炒饭",
+          "filePath": "./../dishes/staple/扬州炒饭/扬州炒饭.md",
+          "category": "staple"
+        },
+        {
+          "name": "披萨饼皮",
+          "filePath": "./../dishes/staple/披萨饼皮/披萨饼皮.md",
+          "category": "staple"
+        },
+        {
+          "name": "日式咖喱饭",
+          "filePath": "./../dishes/staple/日式咖喱饭/日式咖喱饭.md",
+          "category": "staple"
+        },
+        {
+          "name": "日式肥牛丼饭",
+          "filePath": "./../dishes/staple/日式肥牛丼饭/日式肥牛丼饭.md",
+          "category": "staple"
+        },
+        {
+          "name": "河南蒸面条",
+          "filePath": "./../dishes/staple/河南蒸面条/河南蒸面条.md",
+          "category": "staple"
+        },
+        {
+          "name": "火腿饭团",
+          "filePath": "./../dishes/staple/火腿饭团/火腿饭团.md",
+          "category": "staple"
+        },
+        {
+          "name": "炒河粉",
+          "filePath": "./../dishes/staple/炒河粉.md",
+          "category": "staple"
+        },
+        {
+          "name": "烙饼",
+          "filePath": "./../dishes/staple/烙饼/烙饼.md",
+          "category": "staple"
+        },
+        {
+          "name": "空气炸锅照烧鸡饭",
+          "filePath": "./../dishes/staple/空气炸锅照烧鸡饭/空气炸锅照烧鸡饭.md",
+          "category": "staple"
+        },
+        {
+          "name": "蒸卤面",
+          "filePath": "./../dishes/staple/蒸卤面.md",
+          "category": "staple"
+        },
+        {
+          "name": "示例菜",
+          "filePath": "./../dishes/template/示例菜/示例菜.md",
+          "category": "template"
+        },
+        {
+          "name": "红烧茄子",
+          "filePath": "./../dishes/vegetable_dish/红烧茄子.md",
+          "category": "vegetable_dish"
+        }
+      ],
+      "difficultyDescription": "本菜单包含多道具有一定挑战性的菜品，需要掌握多种烹饪技巧和较长的制作时间。适合有一定烹饪经验，乐于尝试复杂菜肴的厨师。",
+      "recommendedFor": [
+        "有经验的家庭厨师",
+        "希望提升厨艺的进阶者",
+        "准备聚会或特殊场合",
+        "喜爱挑战复杂菜肴的人群"
+      ],
+      "tags": [
+        "中等偏高难度",
+        "家宴菜",
+        "特色菜",
+        "进阶烹饪",
+        "多菜系",
+        "海鲜",
+        "肉类主菜",
+        "甜点",
+        "汤品",
+        "主食"
+      ],
+      "filePath": "4Star.md",
+      "originalContent": "# 4 星难度菜品\n\n* [咖喱炒蟹](./../dishes/aquatic/咖喱炒蟹.md)\n* [小龙虾](./../dishes/aquatic/小龙虾/小龙虾.md)\n* [水煮鱼](./../dishes/aquatic/水煮鱼.md)\n* [油焖大虾](./../dishes/aquatic/油焖大虾/油焖大虾.md)\n* [烤鱼](./../dishes/aquatic/混合烤鱼/烤鱼.md)\n* [糖醋鲤鱼](./../dishes/aquatic/糖醋鲤鱼/糖醋鲤鱼.md)\n* [红烧鱼](./../dishes/aquatic/红烧鱼.md)\n* [红烧鱼头](./../dishes/aquatic/红烧鱼头.md)\n* [红烧鲤鱼](./../dishes/aquatic/红烧鲤鱼.md)\n* [葱油桂鱼](./../dishes/aquatic/葱油桂鱼/葱油桂鱼.md)\n* [香煎翘嘴鱼](./../dishes/aquatic/香煎翘嘴鱼/香煎翘嘴鱼.md)\n* [简易版炒糖色](./../dishes/condiment/简易版炒糖色.md)\n* [咖啡椰奶冻](./../dishes/dessert/咖啡椰奶冻/咖啡椰奶冻.md)\n* [提拉米苏](./../dishes/dessert/提拉米苏/提拉米苏.md)\n* [烤蛋挞](./../dishes/dessert/烤蛋挞/烤蛋挞.md)\n* [酸奶意式奶冻](./../dishes/dessert/酸奶意式奶冻/酸奶意式奶冻.md)\n* [魔芋蛋糕](./../dishes/dessert/魔芋蛋糕/魔芋蛋糕.md)\n* [酒酿醪糟](./../dishes/drink/酒酿醪糟/酒酿醪糟.md)\n* [酸梅汤](./../dishes/drink/酸梅汤/酸梅汤.md)\n* [乡村啤酒鸭](./../dishes/meat_dish/乡村啤酒鸭.md)\n* [冬瓜酿肉](./../dishes/meat_dish/冬瓜酿肉/冬瓜酿肉.md)\n* [冷吃兔](./../dishes/meat_dish/冷吃兔.md)\n* [咕噜肉](./../dishes/meat_dish/咕噜肉.md)\n* [咖喱肥牛](./../dishes/meat_dish/咖喱肥牛/咖喱肥牛.md)\n* [啤酒鸭](./../dishes/meat_dish/啤酒鸭/啤酒鸭.md)\n* [回锅肉](./../dishes/meat_dish/回锅肉/回锅肉.md)\n* [宫保鸡丁](./../dishes/meat_dish/宫保鸡丁/宫保鸡丁.md)\n* [小炒黄牛肉](./../dishes/meat_dish/小炒黄牛肉/小炒黄牛肉.md)\n* [尖叫牛蛙](./../dishes/meat_dish/尖叫牛蛙/尖叫牛蛙.md)\n* [山西过油肉](./../dishes/meat_dish/山西过油肉.md)\n* [干煸仔鸡](./../dishes/meat_dish/干煸仔鸡/干煸仔鸡.md)\n* [广式萝卜牛腩](./../dishes/meat_dish/广式萝卜牛腩/广式萝卜牛腩.md)\n* [徽派红烧肉](./../dishes/meat_dish/徽派红烧肉/徽派红烧肉.md)\n* [新疆大盘鸡](./../dishes/meat_dish/新疆大盘鸡/新疆大盘鸡.md)\n* [杀猪菜](./../dishes/meat_dish/杀猪菜.md)\n* [柱候牛腩](./../dishes/meat_dish/柱候牛腩/柱候牛腩.md)\n* [梅菜扣肉](./../dishes/meat_dish/梅菜扣肉/梅菜扣肉.md)\n* [椒盐排条](./../dishes/meat_dish/椒盐排条.md)\n* [湘祁米夫鸭](./../dishes/meat_dish/湘祁米夫鸭/湘祁米夫鸭.md)\n* [牛排](./../dishes/meat_dish/牛排/牛排.md)\n* [番茄红酱](./../dishes/meat_dish/番茄红酱.md)\n* [粉蒸肉](./../dishes/meat_dish/粉蒸肉.md)\n* [糖醋排骨](./../dishes/meat_dish/糖醋排骨/糖醋排骨.md)\n* [糖醋里脊](./../dishes/meat_dish/糖醋里脊.md)\n* [红烧猪蹄](./../dishes/meat_dish/红烧猪蹄/红烧猪蹄.md)\n* [南派红烧肉](./../dishes/meat_dish/红烧肉/南派红烧肉.md)\n* [羊排焖面](./../dishes/meat_dish/羊排焖面/羊排焖面.md)\n* [老妈蹄花](./../dishes/meat_dish/老妈蹄花/老妈蹄花.md)\n* [老式锅包肉](./../dishes/meat_dish/老式锅包肉/老式锅包肉.md)\n* [荔枝肉](./../dishes/meat_dish/荔枝肉/荔枝肉.md)\n* [萝卜炖羊排](./../dishes/meat_dish/萝卜炖羊排.md)\n* [西红柿土豆炖牛肉](./../dishes/meat_dish/西红柿土豆炖牛肉/西红柿土豆炖牛肉.md)\n* [贵州辣子鸡](./../dishes/meat_dish/贵州辣子鸡/贵州辣子鸡.md)\n* [酱排骨](./../dishes/meat_dish/酱排骨/酱排骨.md)\n* [醉排骨](./../dishes/meat_dish/醉排骨/醉排骨.md)\n* [香辣鸡爪煲](./../dishes/meat_dish/香辣鸡爪煲/香辣鸡爪煲.md)\n* [鱼香肉丝](./../dishes/meat_dish/鱼香肉丝.md)\n* [黑椒牛柳](./../dishes/meat_dish/黑椒牛柳/黑椒牛柳.md)\n* [排骨苦瓜汤](./../dishes/soup/排骨苦瓜汤/排骨苦瓜汤.md)\n* [生汆丸子汤](./../dishes/soup/生汆丸子汤.md)\n* [罗宋汤](./../dishes/soup/罗宋汤.md)\n* [腊八粥](./../dishes/soup/腊八粥.md)\n* [菌菇炖乳鸽](./../dishes/soup/菌菇炖乳鸽/菌菇炖乳鸽.md)\n* [银耳莲子粥](./../dishes/soup/银耳莲子粥/银耳莲子粥.md)\n* [陈皮排骨汤](./../dishes/soup/陈皮排骨汤.md)\n* [中式馅饼](./../dishes/staple/中式馅饼/中式馅饼.md)\n* [扬州炒饭](./../dishes/staple/扬州炒饭/扬州炒饭.md)\n* [披萨饼皮](./../dishes/staple/披萨饼皮/披萨饼皮.md)\n* [日式咖喱饭](./../dishes/staple/日式咖喱饭/日式咖喱饭.md)\n* [日式肥牛丼饭](./../dishes/staple/日式肥牛丼饭/日式肥牛丼饭.md)\n* [河南蒸面条](./../dishes/staple/河南蒸面条/河南蒸面条.md)\n* [火腿饭团](./../dishes/staple/火腿饭团/火腿饭团.md)\n* [炒河粉](./../dishes/staple/炒河粉.md)\n* [烙饼](./../dishes/staple/烙饼/烙饼.md)\n* [空气炸锅照烧鸡饭](./../dishes/staple/空气炸锅照烧鸡饭/空气炸锅照烧鸡饭.md)\n* [蒸卤面](./../dishes/staple/蒸卤面.md)\n* [示例菜](./../dishes/template/示例菜/示例菜.md)\n* [红烧茄子](./../dishes/vegetable_dish/红烧茄子.md)",
+      "processedAt": "2025-07-16 13:54:21"
+    },
+    {
+      "title": "5 星难度菜品",
+      "starLevel": 5,
+      "dishes": [
+        {
+          "name": "完美水煮蛋",
+          "filePath": "./../dishes/breakfast/完美水煮蛋.md",
+          "category": "breakfast"
+        },
+        {
+          "name": "戚风蛋糕",
+          "filePath": "./../dishes/dessert/戚风蛋糕/戚风蛋糕.md",
+          "category": "dessert"
+        },
+        {
+          "name": "无厨师机蜂蜜面包",
+          "filePath": "./../dishes/dessert/无厨师机蜂蜜面包/无厨师机蜂蜜面包.md",
+          "category": "dessert"
+        },
+        {
+          "name": "芋泥雪媚娘",
+          "filePath": "./../dishes/dessert/芋泥雪媚娘/芋泥雪媚娘.md",
+          "category": "dessert"
+        },
+        {
+          "name": "台式卤肉饭",
+          "filePath": "./../dishes/meat_dish/台式卤肉饭/台式卤肉饭.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "商芝肉",
+          "filePath": "./../dishes/meat_dish/商芝肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "巴基斯坦牛肉咖喱",
+          "filePath": "./../dishes/meat_dish/巴基斯坦牛肉咖喱/巴基斯坦牛肉咖喱.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "带把肘子",
+          "filePath": "./../dishes/meat_dish/带把肘子.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "无骨鸡爪",
+          "filePath": "./../dishes/meat_dish/无骨鸡爪/无骨鸡爪.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "枝竹羊腩煲",
+          "filePath": "./../dishes/meat_dish/枝竹羊腩煲/枝竹羊腩煲.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "水煮肉片",
+          "filePath": "./../dishes/meat_dish/水煮肉片.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "猪皮冻",
+          "filePath": "./../dishes/meat_dish/猪皮冻/猪皮冻.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "猪肉烩酸菜",
+          "filePath": "./../dishes/meat_dish/猪肉烩酸菜.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "虎皮肘子",
+          "filePath": "./../dishes/meat_dish/虎皮肘子.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "血浆鸭",
+          "filePath": "./../dishes/meat_dish/血浆鸭/血浆鸭.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "西红柿牛腩",
+          "filePath": "./../dishes/meat_dish/西红柿牛腩/西红柿牛腩.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "酱牛肉",
+          "filePath": "./../dishes/meat_dish/酱牛肉/酱牛肉.md",
+          "category": "meat_dish"
+        },
+        {
+          "name": "牛油火锅底料",
+          "filePath": "./../dishes/semi-finished/牛油火锅底料.md",
+          "category": "semi-finished"
+        },
+        {
+          "name": "基础牛奶面包",
+          "filePath": "./../dishes/staple/基础牛奶面包/基础牛奶面包.md",
+          "category": "staple"
+        },
+        {
+          "name": "手工水饺",
+          "filePath": "./../dishes/staple/手工水饺.md",
+          "category": "staple"
+        }
+      ],
+      "difficultyDescription": "本菜单包含多道技巧性强、制作耗时且对烹饪经验要求较高的菜品，适合追求极致美食体验或有丰富烹饪基础的进阶厨师挑战。",
+      "recommendedFor": [
+        "有经验的厨师",
+        "美食挑战者",
+        "家庭聚会",
+        "特色菜肴爱好者"
+      ],
+      "tags": [
+        "高难度",
+        "复杂菜",
+        "中式菜",
+        "西式菜",
+        "烘焙",
+        "肉类",
+        "甜点",
+        "主食",
+        "家常菜",
+        "特色菜"
+      ],
+      "filePath": "5Star.md",
+      "originalContent": "# 5 星难度菜品\n\n* [完美水煮蛋](./../dishes/breakfast/完美水煮蛋.md)\n* [戚风蛋糕](./../dishes/dessert/戚风蛋糕/戚风蛋糕.md)\n* [无厨师机蜂蜜面包](./../dishes/dessert/无厨师机蜂蜜面包/无厨师机蜂蜜面包.md)\n* [芋泥雪媚娘](./../dishes/dessert/芋泥雪媚娘/芋泥雪媚娘.md)\n* [台式卤肉饭](./../dishes/meat_dish/台式卤肉饭/台式卤肉饭.md)\n* [商芝肉](./../dishes/meat_dish/商芝肉.md)\n* [巴基斯坦牛肉咖喱](./../dishes/meat_dish/巴基斯坦牛肉咖喱/巴基斯坦牛肉咖喱.md)\n* [带把肘子](./../dishes/meat_dish/带把肘子.md)\n* [无骨鸡爪](./../dishes/meat_dish/无骨鸡爪/无骨鸡爪.md)\n* [枝竹羊腩煲](./../dishes/meat_dish/枝竹羊腩煲/枝竹羊腩煲.md)\n* [水煮肉片](./../dishes/meat_dish/水煮肉片.md)\n* [猪皮冻](./../dishes/meat_dish/猪皮冻/猪皮冻.md)\n* [猪肉烩酸菜](./../dishes/meat_dish/猪肉烩酸菜.md)\n* [虎皮肘子](./../dishes/meat_dish/虎皮肘子.md)\n* [血浆鸭](./../dishes/meat_dish/血浆鸭/血浆鸭.md)\n* [西红柿牛腩](./../dishes/meat_dish/西红柿牛腩/西红柿牛腩.md)\n* [酱牛肉](./../dishes/meat_dish/酱牛肉/酱牛肉.md)\n* [牛油火锅底料](./../dishes/semi-finished/牛油火锅底料.md)\n* [基础牛奶面包](./../dishes/staple/基础牛奶面包/基础牛奶面包.md)\n* [手工水饺](./../dishes/staple/手工水饺.md)",
+      "processedAt": "2025-07-16 13:54:35"
+    },
+    {
+      "title": "7 星难度菜品",
+      "starLevel": 7,
+      "dishes": [
+        {
+          "name": "无厨师机蜂蜜面包",
+          "filePath": "./../dishes/dessert/无厨师机蜂蜜面包/无厨师机蜂蜜面包.md",
+          "category": "dessert"
+        }
+      ],
+      "difficultyDescription": "极具挑战性，需要高超的烹饪技巧和丰富的经验，适合专业厨师或追求极致烹饪体验的爱好者。",
+      "recommendedFor": [
+        "专业厨师",
+        "高级烹饪爱好者",
+        "挑战者"
+      ],
+      "tags": [
+        "七星",
+        "高难度",
+        "烘焙",
+        "甜点",
+        "面包"
+      ],
+      "filePath": "7Star.md",
+      "originalContent": "# 7 星难度菜品\n\n* [无厨师机蜂蜜面包](./../dishes/dessert/无厨师机蜂蜜面包/无厨师机蜂蜜面包.md)",
+      "processedAt": "2025-07-16 13:54:41"
+    }
+  ]
+}
