@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 6008;
 
 // 引入数据库连接
 const { connectDB, getConnectionStatus } = require('./db');
