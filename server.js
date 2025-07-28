@@ -14,6 +14,7 @@ const { checkDatabaseConnection } = require('./utils');
 const corsOptions = {
   origin: [
     'http://localhost:6009',    // Vite 开发服务器
+    'https://cook.mihouo.com', // 生产环境
   ],
   credentials: true,
   optionsSuccessStatus: 200
