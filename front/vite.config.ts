@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
-export default defineConfig(() => {
+export default defineConfig(({ mode }) => {
+  const isDev = mode === 'development'
 
   return {
     plugins: [
@@ -19,7 +20,9 @@ export default defineConfig(() => {
       allowedHosts: ['cook.mihouo.com'],
     },
     define: {
-      __API_BASE_URL__: JSON.stringify('http://localhost:6008/api'),
+      __API_BASE_URL__: JSON.stringify(
+        isDev ? 'http://localhost:6008/api' : 'https://cook.mihouo.com/api'
+      ),
     }
   }
 })
