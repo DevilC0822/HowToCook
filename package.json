@@ -14,8 +14,8 @@
     "dishes"
   ],
   "scripts": {
-    "start": "nodemon server.js",
-    "dev": "nodemon server.js",
+    "start": "nodemon server.js --port 6008",
+    "dev": "nodemon server.js --port 6008",
     "build": "node ./.github/readme-generate.js",
     "manuallint": "node .github/manual_lint.js",
     "textlint": "textlint . --fix",

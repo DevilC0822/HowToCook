@@ -13,12 +13,7 @@ const { checkDatabaseConnection } = require('./utils');
 // CORS 配置
 const corsOptions = {
   origin: [
-    'http://localhost:5173',    // Vite 开发服务器
-    'http://127.0.0.1:5173',   // 备用地址
-    'http://localhost:5174',    // Vite 开发服务器 (备用端口)
-    'http://127.0.0.1:5174',   // 备用地址
-    'http://localhost:3000',    // 本地测试
-    'http://127.0.0.1:3000',   // 备用地址
+    'http://localhost:6009',    // Vite 开发服务器
   ],
   credentials: true,
   optionsSuccessStatus: 200
@@ -53,7 +48,6 @@ async function startServer() {
     // 启动服务器
     app.listen(port, () => {
       console.log(`服务器运行在端口 ${port}`);
-      console.log(`访问 http://localhost:${port}/api/tips 测试接口`);
     });
   } catch (error) {
     console.error('启动服务器失败:', error);
